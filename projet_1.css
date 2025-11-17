@@ -1,16 +1,24 @@
 /* =================== GLOBAL =================== */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Arial', sans-serif;
-  background: #1c1c1c; /* gris foncé */
-  color: #eee; /* texte clair */
+  background: #1c1c1c;
+  color: #eee;
   text-align: center;
   margin: 0;
   padding: 0;
+
+  min-height: 100vh;      /* occupe toute la hauteur */
+  display: flex;          /* permet de pousser le footer en bas */
+  flex-direction: column;
 }
 
 /* =================== HEADER =================== */
 header {
-  background: linear-gradient(135deg, #ff0000, #900000); /* rouge Deadpool */
+  background: linear-gradient(135deg, #ff0000, #900000);
   color: white;
   padding: 2.5rem 1rem;
   border-bottom: 3px solid #ff0000;
@@ -73,6 +81,6 @@ footer {
   background-color: #111;
   color: #eee;
   padding: 1.5rem;
-  margin-top: 2rem;
   border-top: 3px solid #ff0000;
+  margin-top: auto;   /* pousse le footer en bas */
 }
