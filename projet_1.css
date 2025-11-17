@@ -1,19 +1,17 @@
 /* =================== GLOBAL =================== */
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Arial', sans-serif;
   background: #1c1c1c;
   color: #eee;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-  min-height: 100vh;      /* occupe toute la hauteur */
-  display: flex;          /* permet de pousser le footer en bas */
+  display: flex;
   flex-direction: column;
+  min-height: 100vh; /* toujours plein écran */
 }
 
 /* =================== HEADER =================== */
@@ -23,6 +21,7 @@ header {
   padding: 2.5rem 1rem;
   border-bottom: 3px solid #ff0000;
   border-radius: 0 0 15px 15px;
+  text-align: center;
 }
 
 header h1 {
@@ -30,44 +29,38 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
-header a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-header a:hover {
-  color: #ffcccc;
-}
-
-/* =================== CONTENU =================== */
+/* =================== CONTENU PRINCIPAL =================== */
 main {
+  flex: 1; /* pousse le footer en bas */
   padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+  width: 90%;
+  max-width: 1000px; /* limite largeur sur très grands écrans */
+  margin: 0 auto;    /* centrer horizontalement */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* alignement à gauche pour le bouton */
 }
 
+/* Texte */
 p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #ddd;
+  margin: 1rem 0 2rem 0;
 }
 
-/* =================== LIEN PRINCIPAL =================== */
+/* =================== BOUTON ACCÈS PROCÉDURE =================== */
 .lien-procedure {
-  display: inline-block;
-  margin-top: 1.5rem;
   padding: 1rem 1.8rem;
   background: #2c2c2c;
   border-left: 5px solid #ff0000;
   border-radius: 10px;
   color: #eee;
   text-decoration: none;
-  font-size: 1.2rem;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.5rem;
 }
 
 .lien-procedure:hover {
@@ -78,27 +71,23 @@ p {
 
 /* =================== BOUTON RETOUR =================== */
 .btn-retour {
-  display: inline-block;
-  margin: 2rem 0 0 2rem; /* top 2rem, left 2rem */
   padding: 0.8rem 1.8rem;
-  background: #900000;    /* rouge foncé */
-  color: #fff;            /* texte blanc */
+  background: #900000;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   border-radius: 8px;
   border: 2px solid #ff0000;
-  transition: 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .btn-retour:hover {
   background: #ff0000;
-  color: #fff;
   transform: translateY(-4px);
   box-shadow: 0 8px 15px rgba(255,0,0,0.6);
 }
-
-
 
 /* =================== FOOTER =================== */
 footer {
@@ -106,5 +95,21 @@ footer {
   color: #eee;
   padding: 1.5rem;
   border-top: 3px solid #ff0000;
-  margin-top: auto;   /* pousse le footer en bas */
+  margin-top: auto; /* pousse le footer en bas */
+  text-align: center;
+}
+
+/* =================== RESPONSIVE =================== */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .lien-procedure, .btn-retour {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
 }
