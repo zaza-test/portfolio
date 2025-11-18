@@ -21,11 +21,12 @@ a {
    HEADER
 ========================== */
 header {
-    background: linear-gradient(135deg, #ff0000, #900000);
-    color: white;
-    padding: 2.5rem 1rem;
-    border-bottom: 3px solid #ff0000;
-    border-radius: 0 0 15px 15px;
+    min-height: 100vh; /* Le header prend toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement le contenu */
+    align-items: center; /* Centre horizontalement le contenu */
+    text-align: center;
 }
 
 header h1 {
