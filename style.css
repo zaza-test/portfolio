@@ -1,242 +1,154 @@
 /* ==========================
    GLOBAL
 ========================== */
-body {
-    font-family: Arial, sans-serif;
-    background: #1c1c1c;
-    color: #eee;
-    text-align: center;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; /* police futuriste */
+    background: radial-gradient(circle at 20% 20%, #0f0f1a, #1c1c2c);
+    color: #00fffc;
+    text-align: center;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 a {
-    color: #ffffff !important;
-    font-style: italic;
+    color: #00fffc;
     text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
 }
 
 /* ==========================
    HEADER
 ========================== */
 header {
-    min-height: 100vh; /* Le header prend toute la hauteur de la fenêtre */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centre verticalement le contenu */
-    align-items: center; /* Centre horizontalement le contenu */
-    text-align: center;
+    position: relative;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0f0f1a, #1c1c2c);
+    box-shadow: 0 0 30px #00fffc44;
 }
 
 header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 3em;
+    color: #00fffc;
+    text-shadow: 0 0 8px #00fffc, 0 0 16px #00fffc;
+    margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.1rem;
-    font-style: italic;
+    font-size: 1.2em;
+    color: #80fff0;
+    text-shadow: 0 0 6px #80fff0;
 }
 
 /* ==========================
    NAVIGATION
 ========================== */
 nav {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    background: #11111f;
+    border-bottom: 1px solid #00fffc33;
 }
 
 nav a {
-    color: white !important;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    font-size: 1rem;
+    font-size: 1.1em;
+    letter-spacing: 1px;
 }
-
 nav a:hover {
-    color: #ff0000;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
 /* ==========================
    SECTIONS
 ========================== */
 section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
+    padding: 80px 20px;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(180deg, #1c1c2c 0%, #0f0f1a 100%);
 }
 
-h2 {
-    color: #ffffff !important;
-    border-bottom: 2px solid #ff0000;
-    padding-bottom: 5px;
-    margin-bottom: 1rem;
-    display: inline-block;
-    font-size: 1.8rem;
-}
-
-/* ==========================
-   PROJETS
-========================== */
-.projet {
-    background-color: #2c2c2c;
-    border-left: 5px solid #ff0000;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1rem auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+/* Neon borders for cards or content blocks */
+.card {
+    background: rgba(0, 255, 252, 0.05);
+    border: 1px solid #00fffc;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px #00fffc44, 0 0 40px #00fffc22 inset;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.projet:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-}
-
-.projet h3 a {
-    font-style: italic;
-    color: white !important;
-    font-weight: bold;
-    font-size: 1.2rem;
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff00ff88, 0 0 60px #ff00ff44 inset;
 }
 
 /* ==========================
-   COMPÉTENCES
+   BUTTONS
 ========================== */
-.competences-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    scroll-behavior: smooth;
+button, .btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    padding: 12px 25px;
+    border: 2px solid #00fffc;
+    border-radius: 12px;
+    background: transparent;
+    color: #00fffc;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-
-.competences-slider::-webkit-scrollbar {
-    height: 8px;
-}
-
-.competences-slider::-webkit-scrollbar-thumb {
-    background-color: #ff0000;
-    border-radius: 4px;
-}
-
-.competence-slide {
-    min-width: 240px;
-    background-color: #222;
-    border-left: 5px solid #ff0000;
-    border-radius: 15px;
-    padding: 1.5rem;
-    color: #ffffff;
-    text-align: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.competence-slide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(255,0,0,0.6);
-}
-
-/* ==========================
-   TABLEAU
-========================== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-    font-size: 1rem;
-}
-
-table th,
-table td {
-    border: 1px solid #444;
-    padding: 10px;
-    color: white !important;
+button:hover, .btn:hover {
+    background: #00fffc11;
+    box-shadow: 0 0 12px #00fffc, 0 0 24px #ff00ff;
+    color: #ff00ff;
 }
 
 /* ==========================
    FOOTER
 ========================== */
 footer {
-    background-color: #111;
-    color: #eee;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    border-top: 3px solid #ff0000;
+    padding: 40px 20px;
+    background: #11111f;
+    border-top: 1px solid #00fffc33;
+    color: #00fffcaa;
+    text-shadow: 0 0 4px #00fffc;
 }
 
 /* ==========================
-   RESPONSIVE DESIGN
+   TEXT EFFECTS
 ========================== */
-
-/* ---- TABLETTE ---- */
-@media (max-width: 900px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    .competence-slide {
-        min-width: 200px;
-    }
+.glow-text {
+    color: #00fffc;
+    text-shadow: 0 0 5px #00fffc, 0 0 10px #00fffc, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
 }
 
-/* ---- MOBILE ---- */
-@media (max-width: 600px) {
-
-    header {
-        padding: 2rem 1rem;
-    }
-
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
     header h1 {
-        font-size: 1.7rem;
+        font-size: 2.2em;
     }
-
     nav {
-        display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 20px;
     }
-
-    nav a {
-        font-size: 1rem;
-        margin: 0;
-    }
-
     section {
-        padding: 1.5rem 1rem;
-    }
-
-    .projet {
-        padding: 1.2rem;
-    }
-
-    .projet h3 a {
-        font-size: 1.1rem;
-    }
-
-    .competence-slide {
-        min-width: 180px;
-        padding: 1rem;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    table td, table th {
-        padding: 7px;
+        padding: 60px 15px;
     }
 }
