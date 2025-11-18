@@ -1,151 +1,183 @@
-/* =================== BODY =================== */
+/* ==========================
+   GLOBAL
+========================== */
 body {
-  font-family: 'Arial', sans-serif;
-  background: #1c1c1c;
-  color: #eee;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background: #1c1c1c;
+    color: #eee;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* =================== HEADER =================== */
+/* ==========================
+   HEADER
+========================== */
 header {
-  background: linear-gradient(135deg, #ff0000, #900000);
-  color: white;
-  padding: 2.5rem 1rem;
-  border-bottom: 3px solid #ff0000;
-  border-radius: 0 0 15px 15px;
+    background: linear-gradient(135deg, #ff0000, #900000);
+    color: white;
+    padding: 2.5rem 1rem;
+    border-bottom: 3px solid #ff0000;
+    border-radius: 0 0 15px 15px;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 1.2rem;
-  font-style: italic;
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
-/* =================== NAVIGATION =================== */
+/* ==========================
+   NAVIGATION
+========================== */
 nav a {
-  color: white !important;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  font-style: normal !important;
+    color: white !important;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-  color: #ff0000;
+    color: #ff0000;
 }
 
-/* =================== SECTIONS =================== */
+/* ==========================
+   SECTIONS
+========================== */
 section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
 }
 
 h2 {
-  color: #ff0000;
-  border-bottom: 2px solid #ff0000;
-  padding-bottom: 5px;
-  margin-bottom: 1rem;
-  display: inline-block;
+    color: #ffffff; /* titres en blanc */
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+    display: inline-block;
 }
 
-/* =================== PROJETS =================== */
+/* ==========================
+   LIENS GÉNÉRAUX (LinkedIn)
+========================== */
+a {
+    color: #ffffff !important;
+    font-style: italic;
+    text-decoration: none;
+}
+
+/* ==========================
+   PROJETS
+========================== */
 .projet {
-  background-color: #2c2c2c;
-  border-left: 5px solid #ff0000;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
+    background-color: #2c2c2c;
+    border-left: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .projet:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
 }
 
-/* Liens des projets */
 .projet a {
-  color: #ffffff !important;
-  font-style: italic;
-  font-weight: bold;
-  text-decoration: none;
+    font-style: italic !important; /* projets en italique */
+    font-weight: bold;
 }
 
-/* =================== COMPÉTENCES =================== */
+/* Description sous les projets */
+.projet p {
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* ==========================
+   SLIDER COMPÉTENCES
+========================== */
 .competences-slider {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 1rem 0;
-  margin-top: 2rem;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    scroll-behavior: smooth;
 }
 
 .competences-slider::-webkit-scrollbar {
-  height: 8px;
+    height: 8px;
 }
 
 .competences-slider::-webkit-scrollbar-thumb {
-  background-color: #ff0000;
-  border-radius: 4px;
+    background-color: #ff0000;
+    border-radius: 4px;
 }
 
 .competence-slide {
-  min-width: 250px;
-  background-color: #222;
-  border-radius: 15px;
-  padding: 1.5rem;
-  color: #eee;
-  text-align: center;
-  border-left: 5px solid #ff0000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  flex-shrink: 0;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+    min-width: 250px;
+    background-color: #222;
+    border-left: 5px solid #ff0000;
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .competence-slide:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(255,0,0,0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255,0,0,0.6);
 }
 
-/* Liens dans les compétences */
 .competence-slide a {
-  color: #ffffff !important;
-  font-style: italic;
-  font-weight: bold;
-  text-decoration: none;
+    font-style: italic !important;
+    font-weight: bold;
 }
 
-/* =================== TABLEAU DE SYNTHÈSE =================== */
+/* ==========================
+   TABLEAU DE SYNTHÈSE
+========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+table th,
+table td {
+    border: 1px solid #444;
+    padding: 10px;
+}
+
 table a {
-  color: #ffffff !important;
-  font-style: italic;
-  font-weight: bold;
-  text-decoration: none;
+    font-style: italic !important;
+    font-weight: bold;
+    color: #ffffff !important;
 }
 
-/* =================== LIEN LINKEDIN =================== */
-footer a,
-section a.linkedin {
-  color: #ffffff !important;
-  font-style: italic;
-  text-decoration: none;
-}
-
-/* =================== FOOTER =================== */
+/* ==========================
+   FOOTER
+========================== */
 footer {
-  background-color: #111;
-  color: #eee;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  border-top: 3px solid #ff0000;
+    background-color: #111;
+    color: #eee;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 3px solid #ff0000;
+}
+
+footer a {
+    font-style: italic !important;
+    color: #ffffff !important;
 }
