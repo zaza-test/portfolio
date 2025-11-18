@@ -29,16 +29,15 @@ header p {
 
 /* =================== NAVIGATION =================== */
 nav a {
-  color: #6ecbff; /* bleu très clair */
+  color: white;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-  font-style: italic; /* italique */
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #a8e4ff; /* bleu encore plus clair au survol */
+  color: #ff0000;
 }
 
 /* =================== SECTIONS =================== */
@@ -119,4 +118,34 @@ footer {
   padding: 1.5rem;
   margin-top: 2rem;
   border-top: 3px solid #ff0000;
+}
+
+/* ========================================================= */
+/* === AJOUT : LIENS DANS LES PROJETS ======================= */
+/* ========================================================= */
+.projet a {
+  color: #6ecbff;      /* bleu très clair */
+  font-style: italic;  /* italique */
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.projet a:hover {
+  color: #a8e4ff;      /* encore plus clair au survol */
+}
+
+/* ========================================================= */
+/* === AJOUT : LIENS DANS LES TABLEAUX ====================== */
+/* ========================================================= */
+table a {
+  color: #6ecbff;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+table a:hover {
+  color: #a8e4ff;
 }
