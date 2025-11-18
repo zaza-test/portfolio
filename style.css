@@ -8,6 +8,13 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
+}
+
+a {
+    color: #ffffff !important;
+    font-style: italic;
+    text-decoration: none;
 }
 
 /* ==========================
@@ -22,24 +29,29 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-style: italic;
 }
 
 /* ==========================
    NAVIGATION
 ========================== */
+nav {
+    margin-top: 10px;
+}
+
 nav a {
     color: white !important;
-    margin: 0 15px;
+    margin: 0 12px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    font-size: 1rem;
 }
 
 nav a:hover {
@@ -56,20 +68,12 @@ section {
 }
 
 h2 {
-    color: #ffffff; /* titres en blanc */
+    color: #ffffff !important;
     border-bottom: 2px solid #ff0000;
     padding-bottom: 5px;
     margin-bottom: 1rem;
     display: inline-block;
-}
-
-/* ==========================
-   LIENS GÉNÉRAUX (LinkedIn)
-========================== */
-a {
-    color: #ffffff !important;
-    font-style: italic;
-    text-decoration: none;
+    font-size: 1.8rem;
 }
 
 /* ==========================
@@ -90,19 +94,15 @@ a {
     box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
 }
 
-.projet a {
-    font-style: italic !important; /* projets en italique */
+.projet h3 a {
+    font-style: italic;
+    color: white !important;
     font-weight: bold;
-}
-
-/* Description sous les projets */
-.projet p {
-    margin-top: 10px;
-    color: #ddd;
+    font-size: 1.2rem;
 }
 
 /* ==========================
-   SLIDER COMPÉTENCES
+   COMPÉTENCES
 ========================== */
 .competences-slider {
     display: flex;
@@ -123,7 +123,7 @@ a {
 }
 
 .competence-slide {
-    min-width: 250px;
+    min-width: 240px;
     background-color: #222;
     border-left: 5px solid #ff0000;
     border-radius: 15px;
@@ -140,30 +140,21 @@ a {
     box-shadow: 0 8px 15px rgba(255,0,0,0.6);
 }
 
-.competence-slide a {
-    font-style: italic !important;
-    font-weight: bold;
-}
-
 /* ==========================
-   TABLEAU DE SYNTHÈSE
+   TABLEAU
 ========================== */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 2rem;
+    font-size: 1rem;
 }
 
 table th,
 table td {
     border: 1px solid #444;
     padding: 10px;
-}
-
-table a {
-    font-style: italic !important;
-    font-weight: bold;
-    color: #ffffff !important;
+    color: white !important;
 }
 
 /* ==========================
@@ -177,7 +168,74 @@ footer {
     border-top: 3px solid #ff0000;
 }
 
-footer a {
-    font-style: italic !important;
-    color: #ffffff !important;
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* ---- TABLETTE ---- */
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .competence-slide {
+        min-width: 200px;
+    }
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 600px) {
+
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    .projet {
+        padding: 1.2rem;
+    }
+
+    .projet h3 a {
+        font-size: 1.1rem;
+    }
+
+    .competence-slide {
+        min-width: 180px;
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table td, table th {
+        padding: 7px;
+    }
 }
