@@ -75,14 +75,17 @@ section {
     box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
-/* Sections pleine largeur */
+/* Sections pleine largeur réelle */
 .fullwidth-section {
-    max-width: 100% !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 2rem 1rem;
+    width: 100vw;          /* largeur totale de la fenêtre */
+    max-width: 100vw;      
+    margin: 0;             /* pas de centrage */
+    border-radius: 0;      /* pas de coins arrondis */
+    box-shadow: none;      /* retirer l’effet “carte” */
+    backdrop-filter: none; /* retirer le flou */
+    padding: 2rem 1rem;    /* padding interne */
 }
+
 
 
 h2 {
