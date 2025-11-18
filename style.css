@@ -8,8 +8,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* style moderne et doux */
-    background: linear-gradient(135deg, #c1d6ff, #fbc2eb);
+    font-family: 'Poppins', sans-serif; /* moderne et lisible */
+    background: linear-gradient(135deg, #c1d6ff, #fbc2eb); /* fond doux en dégradé */
     color: #333;
     text-align: center;
     line-height: 1.6;
@@ -32,7 +32,7 @@ a:hover {
 ========================== */
 header {
     padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* verre translucide */
     backdrop-filter: blur(15px);
     border-radius: 20px;
     margin: 20px auto;
@@ -86,7 +86,7 @@ section {
 
 /* Glass cards for content */
 .card {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* verre translucide */
     border-radius: 20px;
     padding: 30px;
     margin: 20px auto;
