@@ -1,22 +1,18 @@
 /* ==========================
    GLOBAL
 ========================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: Arial, sans-serif;
     background: #1c1c1c;
     color: #eee;
     text-align: center;
+    margin: 0;
+    padding: 0;
     line-height: 1.5;
 }
 
 a {
-    color: #ffffff;
+    color: #ffffff !important;
     font-style: italic;
     text-decoration: none;
 }
@@ -34,7 +30,7 @@ header {
 
 header h1 {
     font-size: 2.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 header p {
@@ -46,14 +42,13 @@ header p {
    NAVIGATION
 ========================== */
 nav {
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    margin-top: 10px;
 }
 
 nav a {
+    color: white !important;
+    margin: 0 12px;
+    text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
     font-size: 1rem;
@@ -67,18 +62,17 @@ nav a:hover {
    SECTIONS
 ========================== */
 section {
-    padding: 2rem 1rem;
-    width: 100%;
-    max-width: 1200px;   /* plus large = meilleure lisibilité */
+    padding: 2rem;
+    max-width: 900px;
     margin: auto;
 }
 
 h2 {
-    color: white;
+    color: #ffffff !important;
     border-bottom: 2px solid #ff0000;
-    padding-bottom: 6px;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
     display: inline-block;
-    margin-bottom: 1.5rem;
     font-size: 1.8rem;
 }
 
@@ -90,7 +84,7 @@ h2 {
     border-left: 5px solid #ff0000;
     border-radius: 10px;
     padding: 1.5rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -101,9 +95,10 @@ h2 {
 }
 
 .projet h3 a {
-    color: white;
+    font-style: italic;
+    color: white !important;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 /* ==========================
@@ -114,17 +109,17 @@ h2 {
     overflow-x: auto;
     gap: 20px;
     padding: 1rem 0;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     scroll-behavior: smooth;
 }
 
 .competences-slider::-webkit-scrollbar {
-    height: 7px;
+    height: 8px;
 }
 
 .competences-slider::-webkit-scrollbar-thumb {
     background-color: #ff0000;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .competence-slide {
@@ -133,7 +128,7 @@ h2 {
     border-left: 5px solid #ff0000;
     border-radius: 15px;
     padding: 1.5rem;
-    color: white;
+    color: #ffffff;
     text-align: center;
     flex-shrink: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -142,23 +137,24 @@ h2 {
 
 .competence-slide:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(255,0,0,0.6);
+    box-shadow: 0 8px 15px rgba(255,0,0,0.6);
 }
 
 /* ==========================
-   TABLEAU DE SYNTHÈSE
+   TABLEAU
 ========================== */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 2rem;
+    font-size: 1rem;
 }
 
 table th,
 table td {
     border: 1px solid #444;
     padding: 10px;
-    color: white;
+    color: white !important;
 }
 
 /* ==========================
@@ -173,12 +169,18 @@ footer {
 }
 
 /* ==========================
-   RESPONSIVE — TABLETTES
+   RESPONSIVE DESIGN
 ========================== */
-@media (max-width: 900px) {
 
+/* ---- TABLETTE ---- */
+@media (max-width: 900px) {
     header h1 {
         font-size: 2rem;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
     }
 
     h2 {
@@ -190,9 +192,7 @@ footer {
     }
 }
 
-/* ==========================
-   RESPONSIVE — MOBILES
-========================== */
+/* ---- MOBILE ---- */
 @media (max-width: 600px) {
 
     header {
@@ -204,17 +204,18 @@ footer {
     }
 
     nav {
+        display: flex;
         flex-direction: column;
         gap: 6px;
     }
 
     nav a {
         font-size: 1rem;
-        display: block;
+        margin: 0;
     }
 
     section {
-        padding: 1.4rem 0.8rem;
+        padding: 1.5rem 1rem;
     }
 
     .projet {
@@ -222,11 +223,11 @@ footer {
     }
 
     .projet h3 a {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     .competence-slide {
-        min-width: 170px;
+        min-width: 180px;
         padding: 1rem;
     }
 
