@@ -29,15 +29,16 @@ header p {
 
 /* =================== NAVIGATION =================== */
 nav a {
-  color: white;
+  color: #6ecbff; /* bleu très clair */
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
+  font-style: italic; /* italique */
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #ff0000;
+  color: #a8e4ff; /* bleu encore plus clair au survol */
 }
 
 /* =================== SECTIONS =================== */
