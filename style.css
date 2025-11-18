@@ -78,7 +78,8 @@ nav a:hover {
 section {
     padding: 2rem;
     max-width: 900px;
-    margin: auto;
+    margin: 2rem auto;
+
 
     background: rgba(255,255,255,0.04);
     border-radius: 16px;
