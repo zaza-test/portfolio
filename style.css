@@ -8,45 +8,47 @@
 }
 
 body {
-    font-family: 'Orbitron', sans-serif; /* police futuriste */
-    background: radial-gradient(circle at 20% 20%, #0f0f1a, #1c1c2c);
-    color: #00fffc;
+    font-family: 'Poppins', sans-serif; /* style moderne et doux */
+    background: linear-gradient(135deg, #c1d6ff, #fbc2eb);
+    color: #333;
     text-align: center;
-    line-height: 1.5;
-    overflow-x: hidden;
+    line-height: 1.6;
 }
 
+/* ==========================
+   LINKS
+========================== */
 a {
-    color: #00fffc;
+    color: #4b4bff;
     text-decoration: none;
     transition: 0.3s;
 }
 a:hover {
-    color: #ff00ff;
-    text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
+    color: #ff6ec7;
 }
 
 /* ==========================
    HEADER
 ========================== */
 header {
-    position: relative;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #0f0f1a, #1c1c2c);
-    box-shadow: 0 0 30px #00fffc44;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
 header h1 {
     font-size: 3em;
-    color: #00fffc;
-    text-shadow: 0 0 8px #00fffc, 0 0 16px #00fffc;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 header p {
     font-size: 1.2em;
-    color: #80fff0;
-    text-shadow: 0 0 6px #80fff0;
+    color: #eee;
 }
 
 /* ==========================
@@ -57,16 +59,21 @@ nav {
     justify-content: center;
     gap: 40px;
     padding: 20px;
-    background: #11111f;
-    border-bottom: 1px solid #00fffc33;
+    margin-bottom: 40px;
 }
 
 nav a {
     font-size: 1.1em;
-    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 nav a:hover {
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    background: rgba(255,255,255,0.35);
+    color: #ff6ec7;
 }
 
 /* ==========================
@@ -75,47 +82,43 @@ nav a:hover {
 section {
     padding: 80px 20px;
     min-height: 100vh;
-    position: relative;
-    background: linear-gradient(180deg, #1c1c2c 0%, #0f0f1a 100%);
 }
 
-/* Neon borders for cards or content blocks */
+/* Glass cards for content */
 .card {
-    background: rgba(0, 255, 252, 0.05);
-    border: 1px solid #00fffc;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 30px;
     margin: 20px auto;
     max-width: 600px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 20px #00fffc44, 0 0 40px #00fffc22 inset;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #ff00ff88, 0 0 60px #ff00ff44 inset;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
 }
 
 /* ==========================
    BUTTONS
 ========================== */
 button, .btn {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1em;
     padding: 12px 25px;
-    border: 2px solid #00fffc;
+    border: none;
     border-radius: 12px;
-    background: transparent;
-    color: #00fffc;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    color: #fff;
     cursor: pointer;
     transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 button:hover, .btn:hover {
-    background: #00fffc11;
-    box-shadow: 0 0 12px #00fffc, 0 0 24px #ff00ff;
-    color: #ff00ff;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    color: #ff6ec7;
 }
 
 /* ==========================
@@ -123,18 +126,21 @@ button:hover, .btn:hover {
 ========================== */
 footer {
     padding: 40px 20px;
-    background: #11111f;
-    border-top: 1px solid #00fffc33;
-    color: #00fffcaa;
-    text-shadow: 0 0 4px #00fffc;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
 /* ==========================
    TEXT EFFECTS
 ========================== */
-.glow-text {
-    color: #00fffc;
-    text-shadow: 0 0 5px #00fffc, 0 0 10px #00fffc, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+.glass-text {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 /* ==========================
