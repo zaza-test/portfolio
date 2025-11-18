@@ -68,16 +68,16 @@ nav a:hover {
    SECTIONS
 ========================== */
 section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: 2rem auto;
-
+    padding: 1.5rem 1rem;            /* moins de hauteur interne */
+    max-width: 1200px;               /* plus large → moins de hauteur */
+    margin: 1.5rem auto;             /* espace extérieur réduit */
 
     background: rgba(255,255,255,0.04);
     border-radius: 16px;
     backdrop-filter: blur(12px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
+
 
 h2 {
     color: #ffffff !important;
