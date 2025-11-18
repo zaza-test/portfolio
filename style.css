@@ -1,160 +1,256 @@
 /* ==========================
    GLOBAL
 ========================== */
-* {
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    color: #eee;
+    text-align: center;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
+    backdrop-filter: blur(5px);
 }
 
-body {
-    font-family: 'Poppins', sans-serif; /* moderne et lisible */
-    background: linear-gradient(135deg, #c1d6ff, #fbc2eb); /* fond doux en dégradé */
-    color: #333;
-    text-align: center;
-    line-height: 1.6;
-}
-
-/* ==========================
-   LINKS
-========================== */
 a {
-    color: #4b4bff;
+    color: #ffffff !important;
+    font-style: italic;
     text-decoration: none;
-    transition: 0.3s;
-}
-a:hover {
-    color: #ff6ec7;
 }
 
 /* ==========================
    HEADER
 ========================== */
 header {
-    padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.2); /* verre translucide */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
     backdrop-filter: blur(15px);
-    border-radius: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 header h1 {
-    font-size: 3em;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
 }
 
 header p {
-    font-size: 1.2em;
-    color: #eee;
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 /* ==========================
    NAVIGATION
 ========================== */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 nav a {
-    font-size: 1.1em;
-    padding: 10px 20px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    color: white !important;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
     transition: 0.3s;
+    font-size: 1rem;
 }
+
 nav a:hover {
-    background: rgba(255,255,255,0.35);
-    color: #ff6ec7;
+    color: #ff4c4c;
 }
 
 /* ==========================
    SECTIONS
 ========================== */
 section {
-    padding: 80px 20px;
-    min-height: 100vh;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.07);
 }
 
-/* Glass cards for content */
-.card {
-    background: rgba(255, 255, 255, 0.2); /* verre translucide */
-    border-radius: 20px;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 600px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+h2 {
+    color: #ffffff !important;
+    border-bottom: 2px solid #ff4c4c;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-size: 1.8rem;
 }
 
 /* ==========================
-   BUTTONS
+   PROJETS
 ========================== */
-button, .btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.25);
+.projet {
+    background: rgba(255,255,255,0.06);
     backdrop-filter: blur(10px);
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
+    border-left: 5px solid #ff4c4c;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-button:hover, .btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    color: #ff6ec7;
+
+.projet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+}
+
+.projet h3 a {
+    font-style: italic;
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================
+   COMPÉTENCES
+========================== */
+.competences-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+.competences-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.competences-slider::-webkit-scrollbar-thumb {
+    background-color: #ff4c4c;
+    border-radius: 4px;
+}
+
+.competence-slide {
+    min-width: 240px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(12px);
+    border-left: 5px solid #ff4c4c;
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.competence-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,0,0,0.55);
+}
+
+/* ==========================
+   TABLEAU
+========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    color: white !important;
 }
 
 /* ==========================
    FOOTER
 ========================== */
 footer {
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    color: #fff;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    color: #eee;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 3px solid #ff4c4c;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.4);
 }
 
 /* ==========================
-   TEXT EFFECTS
+   RESPONSIVE DESIGN
 ========================== */
-.glass-text {
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
 
-/* ==========================
-   RESPONSIVE
-========================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     header h1 {
-        font-size: 2.2em;
+        font-size: 2rem;
     }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .competence-slide {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
     nav {
         flex-direction: column;
-        gap: 20px;
+        gap: 6px;
     }
+
     section {
-        padding: 60px 15px;
+        padding: 1.5rem 1rem;
+    }
+
+    .projet {
+        padding: 1.2rem;
+    }
+
+    .projet h3 a {
+        font-size: 1.1rem;
+    }
+
+    .competence-slide {
+        min-width: 180px;
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table td, table th {
+        padding: 7px;
     }
 }
