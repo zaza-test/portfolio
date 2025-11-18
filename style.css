@@ -22,7 +22,9 @@ a {
    HEADER
 ========================== */
 header {
-    min-height: 55vh; /* ↓ RÉDUIT (au lieu de 100vh) */
+    min-height: auto;
+    padding: 3rem 1rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,7 +88,7 @@ section {
 
 h2 {
     color: #ffffff !important;
-    border-bottom: 2px solid #7b5cff; /* rouge → violet */
+    border-bottom: 2px solid #7b5cff;
     padding-bottom: 5px;
     margin-bottom: 1rem;
     display: inline-block;
@@ -100,7 +102,7 @@ h2 {
     background-color: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
 
-    border-left: 5px solid #7b5cff; /* rouge → violet */
+    border-left: 5px solid #7b5cff;
     border-radius: 10px;
 
     padding: 1.5rem;
@@ -140,7 +142,7 @@ h2 {
     background: rgba(255,255,255,0.06);
     backdrop-filter: blur(10px);
 
-    border-left: 5px solid #7b5cff; /* violet */
+    border-left: 5px solid #7b5cff;
     border-radius: 15px;
 
     padding: 1.5rem;
@@ -194,7 +196,6 @@ footer {
 /* ==========================
    RESPONSIVE DESIGN
 ========================== */
-
 @media (max-width: 900px) {
     header h1 {
         font-size: 2rem;
@@ -210,8 +211,8 @@ footer {
 
 @media (max-width: 600px) {
     header {
-        padding: 1.5rem 1rem;
-        min-height: 45vh; /* ↓ encore plus petit sur mobile */
+        min-height: auto;
+        padding: 2rem 1rem;
     }
 
     nav {
