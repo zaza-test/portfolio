@@ -11,230 +11,128 @@ body {
     font-family: Arial, sans-serif;
     background: #1c1c1c;
     color: #eee;
-    text-align: center;
     line-height: 1.5;
+    text-align: center;
 }
 
+/* Liens */
 a {
     color: #ffffff;
-    font-style: italic;
     text-decoration: none;
 }
 
+a:hover {
+    color: #ff6347;
+}
+
 /* ==========================
-   HEADER
+   HEADER / ACCUEIL
 ========================== */
 header {
-    background: linear-gradient(135deg, #ff0000, #900000);
-    color: white;
-    padding: 2.5rem 1rem;
-    border-bottom: 3px solid #ff0000;
-    border-radius: 0 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Remplit tout l'écran */
+    background: linear-gradient(to bottom, #1c1c1c, #333);
+    padding: 20px;
 }
 
 header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.4rem;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 header p {
-    font-size: 1.1rem;
-    font-style: italic;
-}
-
-/* ==========================
-   NAVIGATION
-========================== */
-nav {
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-nav a {
-    font-weight: bold;
-    transition: 0.3s;
-    font-size: 1rem;
-}
-
-nav a:hover {
-    color: #ff0000;
-}
-
-/* ==========================
-   SECTIONS
-========================== */
-section {
-    padding: 2rem 1rem;
-    width: 100%;
-    max-width: 1200px;   /* plus large = meilleure lisibilité */
-    margin: auto;
-}
-
-h2 {
-    color: white;
-    border-bottom: 2px solid #ff0000;
-    padding-bottom: 6px;
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-/* ==========================
-   PROJETS
-========================== */
-.projet {
-    background-color: #2c2c2c;
-    border-left: 5px solid #ff0000;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.projet:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-}
-
-.projet h3 a {
-    color: white;
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    max-width: 800px;
 }
 
 /* ==========================
    COMPÉTENCES
 ========================== */
-.competences-slider {
+#competences {
     display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 1rem 0;
-    margin-top: 1.5rem;
-    scroll-behavior: smooth;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Remplit tout l'écran */
+    background: #222;
+    padding: 50px 20px;
 }
 
-.competences-slider::-webkit-scrollbar {
-    height: 7px;
-}
-
-.competences-slider::-webkit-scrollbar-thumb {
-    background-color: #ff0000;
-    border-radius: 5px;
-}
-
-.competence-slide {
-    min-width: 240px;
-    background-color: #222;
-    border-left: 5px solid #ff0000;
-    border-radius: 15px;
-    padding: 1.5rem;
-    color: white;
-    text-align: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.competence-slide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(255,0,0,0.6);
-}
-
-/* ==========================
-   TABLEAU DE SYNTHÈSE
-========================== */
-table {
+.competence-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
 }
 
-table th,
-table td {
-    border: 1px solid #444;
-    padding: 10px;
-    color: white;
+.competence-item {
+    background: #333;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.competence-item:hover {
+    transform: translateY(-10px);
+    background: #444;
 }
 
 /* ==========================
    FOOTER
 ========================== */
 footer {
-    background-color: #111;
-    color: #eee;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    border-top: 3px solid #ff0000;
+    padding: 20px;
+    background: #111;
 }
 
 /* ==========================
-   RESPONSIVE — TABLETTES
+   RESPONSIVE
 ========================== */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
 
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .competence-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
     }
 
-    h2 {
-        font-size: 1.6rem;
+    header p {
+        font-size: 1rem;
     }
 
-    .competence-slide {
-        min-width: 200px;
+    .competence-item {
+        width: 60%;
     }
 }
 
-/* ==========================
-   RESPONSIVE — MOBILES
-========================== */
-@media (max-width: 600px) {
-
-    header {
-        padding: 2rem 1rem;
-    }
-
+@media (max-width: 480px) {
     header h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
-    nav {
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    nav a {
-        font-size: 1rem;
-        display: block;
-    }
-
-    section {
-        padding: 1.4rem 0.8rem;
-    }
-
-    .projet {
-        padding: 1.2rem;
-    }
-
-    .projet h3 a {
-        font-size: 1.15rem;
-    }
-
-    .competence-slide {
-        min-width: 170px;
-        padding: 1rem;
-    }
-
-    table {
+    header p {
         font-size: 0.9rem;
     }
 
-    table td, table th {
-        padding: 7px;
+    .competence-item {
+        width: 90%;
     }
 }
