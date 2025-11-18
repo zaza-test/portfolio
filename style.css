@@ -1,18 +1,22 @@
 /* ==========================
    GLOBAL
 ========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #1c1c1c;
     color: #eee;
     text-align: center;
-    margin: 0;
-    padding: 0;
     line-height: 1.5;
 }
 
 a {
-    color: #ffffff !important;
+    color: #ffffff;
     font-style: italic;
     text-decoration: none;
 }
@@ -30,7 +34,7 @@ header {
 
 header h1 {
     font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 header p {
@@ -42,13 +46,14 @@ header p {
    NAVIGATION
 ========================== */
 nav {
-    margin-top: 10px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 nav a {
-    color: white !important;
-    margin: 0 12px;
-    text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
     font-size: 1rem;
@@ -62,17 +67,17 @@ nav a:hover {
    SECTIONS
 ========================== */
 section {
-    padding: 2rem;
+    padding: 2rem 1rem;
     max-width: 900px;
     margin: auto;
 }
 
 h2 {
-    color: #ffffff !important;
+    color: white;
     border-bottom: 2px solid #ff0000;
-    padding-bottom: 5px;
-    margin-bottom: 1rem;
+    padding-bottom: 6px;
     display: inline-block;
+    margin-bottom: 1.5rem;
     font-size: 1.8rem;
 }
 
@@ -84,7 +89,7 @@ h2 {
     border-left: 5px solid #ff0000;
     border-radius: 10px;
     padding: 1.5rem;
-    margin: 1rem auto;
+    margin: 1rem 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -95,10 +100,9 @@ h2 {
 }
 
 .projet h3 a {
-    font-style: italic;
-    color: white !important;
+    color: white;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 /* ==========================
@@ -109,17 +113,17 @@ h2 {
     overflow-x: auto;
     gap: 20px;
     padding: 1rem 0;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     scroll-behavior: smooth;
 }
 
 .competences-slider::-webkit-scrollbar {
-    height: 8px;
+    height: 7px;
 }
 
 .competences-slider::-webkit-scrollbar-thumb {
     background-color: #ff0000;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .competence-slide {
@@ -128,7 +132,7 @@ h2 {
     border-left: 5px solid #ff0000;
     border-radius: 15px;
     padding: 1.5rem;
-    color: #ffffff;
+    color: white;
     text-align: center;
     flex-shrink: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -137,7 +141,7 @@ h2 {
 
 .competence-slide:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(255,0,0,0.6);
+    box-shadow: 0 8px 18px rgba(255,0,0,0.6);
 }
 
 /* ==========================
@@ -147,14 +151,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 2rem;
-    font-size: 1rem;
 }
 
 table th,
 table td {
     border: 1px solid #444;
     padding: 10px;
-    color: white !important;
+    color: white;
 }
 
 /* ==========================
@@ -169,18 +172,12 @@ footer {
 }
 
 /* ==========================
-   RESPONSIVE DESIGN
+   RESPONSIVE — TABLETTES
 ========================== */
-
-/* ---- TABLETTE ---- */
 @media (max-width: 900px) {
+
     header h1 {
         font-size: 2rem;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
     }
 
     h2 {
@@ -192,7 +189,9 @@ footer {
     }
 }
 
-/* ---- MOBILE ---- */
+/* ==========================
+   RESPONSIVE — MOBILES
+========================== */
 @media (max-width: 600px) {
 
     header {
@@ -204,18 +203,17 @@ footer {
     }
 
     nav {
-        display: flex;
         flex-direction: column;
         gap: 6px;
     }
 
     nav a {
         font-size: 1rem;
-        margin: 0;
+        display: block;
     }
 
     section {
-        padding: 1.5rem 1rem;
+        padding: 1.4rem 0.8rem;
     }
 
     .projet {
@@ -223,11 +221,11 @@ footer {
     }
 
     .projet h3 a {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     .competence-slide {
-        min-width: 180px;
+        min-width: 170px;
         padding: 1rem;
     }
 
