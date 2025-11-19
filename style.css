@@ -4,57 +4,49 @@
 html, body {
     height: 100%;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0b0b14, #1a1530);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    color: #eee;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+    color: #333;
     line-height: 1.5;
     text-align: center;
     overflow-x: hidden;
-    transition: background 0.5s;
 }
 
 /* Liens */
 a {
-    color: #ffffff !important;
-    font-style: italic;
+    color: #e63946; /* rouge clair */
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 a:hover {
-    color: #7b5cff !important;
+    color: #ff4d6d;
+    text-shadow: 0 0 3px rgba(230,57,70,0.7);
 }
 
-/* ==========================
+/* =========================
    HEADER
 ========================== */
 header {
-    padding: 1.8rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 1rem;
+    background: rgba(255,255,255,0.5);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    transition: box-shadow 0.3s, background 0.3s;
-}
-
-header:hover {
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255, 255, 255, 0.15);
+    border-radius: 0 0 20px 20px;
+    border-bottom: 1px solid rgba(230,57,70,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+    transition: all 0.3s;
 }
 
 header h1 {
     font-size: 2rem;
     margin-bottom: 0.4rem;
+    color: #e63946;
 }
 
 header p {
@@ -62,19 +54,16 @@ header p {
     font-style: italic;
 }
 
+/* Navigation */
 nav {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     padding: 8px 16px;
     border-radius: 25px;
     display: inline-flex;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.3);
     backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s;
-}
-
-nav:hover {
-    box-shadow: 0 8px 40px rgba(123,92,255,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s;
 }
 
 nav a {
@@ -83,204 +72,69 @@ nav a {
     font-size: 1rem;
 }
 
-/* ==========================
-   SECTIONS CARTES
+/* =========================
+   SECTIONS AVEC GRADIENT ANIMÉ
 ========================== */
-section {
-    padding: 1.5rem 1rem;
-    max-width: 1200px;
-    margin: 1.5rem auto;
-    background: rgba(255,255,255,0.05);
+section, .fullwidth-section, .projet, .competence-slide {
+    background: rgba(255,255,255,0.5);
     backdrop-filter: blur(15px);
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border: 1px solid rgba(230,57,70,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+    margin: 1.5rem auto;
+    padding: 2rem 1rem;
+    max-width: 1200px;
     position: relative;
     overflow: hidden;
-    transition: box-shadow 0.3s, background 0.3s;
+    transition: all 0.3s;
 }
 
-section::before {
+/* Gradient animé */
+section::before, .fullwidth-section::before, .projet::before, .competence-slide::before {
     content: "";
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(120deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.2;
-    filter: blur(60px);
-    animation: gradientShift 10s linear infinite;
-    z-index: 0;
-}
-
-section:hover {
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.1);
-}
-
-section h2 {
-    position: relative;
-    z-index: 1;
-    border-bottom: 2px solid #7b5cff;
-    padding-bottom: 5px;
-    display: inline-block;
-    font-size: 1.8rem;
-    word-wrap: break-word;
-}
-
-/* ==========================
-   FULLWIDTH SECTIONS
-========================== */
-.fullwidth-section {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 3rem 0;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(25px);
-    border-radius: 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s, background 0.3s;
-}
-
-.fullwidth-section::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(60deg, #7b5cff, #ff72e0, #7b5cff);
+    background: linear-gradient(45deg, #ffb3b3, #e63946, #ffb3b3);
     opacity: 0.15;
     filter: blur(80px);
     animation: gradientShift 15s linear infinite;
     z-index: 0;
 }
 
-.fullwidth-section:hover {
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.12);
-}
-
-.fullwidth-section .content-wrapper {
-    max-width: 900px;
-    margin: auto;
-    padding: 0 1rem;
+section h2, .projet h3, .competence-slide h3 {
     position: relative;
     z-index: 1;
+    color: #e63946;
+    border-bottom: 2px solid #e63946;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
-/* ==========================
-   PROJETS
-========================== */
-.projet {
-    background-color: rgba(255,255,255,0.06);
-    backdrop-filter: blur(15px);
-    border-left: 5px solid #7b5cff;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1rem auto;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.15);
-    position: relative;
-    overflow: hidden;
-}
-
-.projet::before {
-    content: "";
-    position: absolute;
-    top: -40%;
-    left: -40%;
-    width: 180%;
-    height: 180%;
-    background: linear-gradient(45deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.1;
-    filter: blur(60px);
-    animation: gradientShift 12s linear infinite;
-    z-index: 0;
-}
-
-.projet:hover {
+/* Hover effets */
+section:hover, .fullwidth-section:hover, .projet:hover, .competence-slide:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.1);
+    box-shadow: 0 12px 40px rgba(230,57,70,0.2);
+    background: rgba(255,255,255,0.6);
 }
 
-/* ==========================
-   COMPÉTENCES
-========================== */
-.competences-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    scroll-behavior: smooth;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.competence-slide {
-    min-width: 240px;
-    background: rgba(255,255,255,0.07);
-    backdrop-filter: blur(15px);
-    border-left: 5px solid #7b5cff;
-    border-radius: 20px;
-    padding: 1.5rem;
-    flex-shrink: 0;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.15);
-    position: relative;
-    overflow: hidden;
-}
-
-.competence-slide::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(90deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.1;
-    filter: blur(50px);
-    animation: gradientShift 14s linear infinite;
-    z-index: 0;
-}
-
-.competence-slide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.12);
-}
-
-/* ==========================
+/* =========================
    FOOTER
 ========================== */
 footer {
-    background-color: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.5);
     backdrop-filter: blur(20px);
     padding: 1.5rem;
-    border-top: 3px solid #7b5cff;
+    border-top: 3px solid #e63946;
     border-radius: 15px 15px 0 0;
-    box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s, background 0.3s;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.05);
+    transition: all 0.3s;
 }
 
-footer:hover {
-    box-shadow: 0 -12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.12);
-}
-
-/* ==========================
-   ANIMATIONS
+/* =========================
+   ANIMATION GRADIENT
 ========================== */
 @keyframes gradientShift {
     0% { transform: rotate(0deg) translate(0,0); }
@@ -288,7 +142,7 @@ footer:hover {
     100% { transform: rotate(360deg) translate(0,0); }
 }
 
-/* ==========================
+/* =========================
    RESPONSIVE
 ========================== */
 @media (max-width: 600px) {
@@ -303,13 +157,13 @@ footer:hover {
         padding: 12px;
     }
 
+    section, .fullwidth-section {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
     .competence-slide {
         min-width: 200px;
         font-size: 0.9rem;
-    }
-
-    section {
-        margin: 1rem;
-        padding: 1rem;
     }
 }
