@@ -8,12 +8,12 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0b0b14, #1a1530);
+    background: linear-gradient(135deg, #ffeef8, #ffddee); /* rose pâle doux */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    color: #eee;
+    color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.5;
@@ -24,14 +24,14 @@ body {
 
 /* Liens */
 a {
-    color: #ffffff !important;
+    color: #b24f7a !important;
     font-style: italic;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #7b5cff !important;
+    color: #ff88cc !important;
 }
 
 /* ==========================
@@ -39,17 +39,29 @@ a:hover {
 ========================== */
 header {
     padding: 1.8rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0 0 15px 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
     transition: box-shadow 0.3s, background 0.3s;
 }
 
+header::before {
+    content: "🌸🌸🌸";
+    position: absolute;
+    top: 10%;
+    right: -20%;
+    font-size: 3rem;
+    opacity: 0.1;
+    animation: floatFlowers 12s linear infinite;
+}
+
 header:hover {
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px rgba(255,136,204,0.4);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 header h1 {
@@ -67,14 +79,14 @@ nav {
     padding: 8px 16px;
     border-radius: 25px;
     display: inline-flex;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s;
 }
 
 nav:hover {
-    box-shadow: 0 8px 40px rgba(123,92,255,0.3);
+    box-shadow: 0 8px 40px rgba(255,136,204,0.3);
 }
 
 nav a {
@@ -84,132 +96,77 @@ nav a {
 }
 
 /* ==========================
-   SECTIONS CARTES
+   SECTIONS
 ========================== */
 section {
     padding: 1.5rem 1rem;
     max-width: 1200px;
     margin: 1.5rem auto;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(20px);
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
     transition: box-shadow 0.3s, background 0.3s;
 }
 
 section::before {
-    content: "";
+    content: "🌸";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(120deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.2;
-    filter: blur(60px);
-    animation: gradientShift 10s linear infinite;
-    z-index: 0;
+    top: 0;
+    left: 50%;
+    font-size: 4rem;
+    opacity: 0.05;
+    animation: floatFlowers 20s linear infinite;
 }
 
 section:hover {
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.1);
+    box-shadow: 0 12px 40px rgba(255,136,204,0.3);
+    background: rgba(255,255,255,0.4);
 }
 
 section h2 {
     position: relative;
     z-index: 1;
-    border-bottom: 2px solid #7b5cff;
+    border-bottom: 2px solid #ff88cc;
     padding-bottom: 5px;
     display: inline-block;
     font-size: 1.8rem;
-    word-wrap: break-word;
-}
-
-/* ==========================
-   FULLWIDTH SECTIONS
-========================== */
-.fullwidth-section {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 3rem 0;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(25px);
-    border-radius: 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s, background 0.3s;
-}
-
-.fullwidth-section::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(60deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.15;
-    filter: blur(80px);
-    animation: gradientShift 15s linear infinite;
-    z-index: 0;
-}
-
-.fullwidth-section:hover {
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.12);
-}
-
-.fullwidth-section .content-wrapper {
-    max-width: 900px;
-    margin: auto;
-    padding: 0 1rem;
-    position: relative;
-    z-index: 1;
 }
 
 /* ==========================
    PROJETS
 ========================== */
 .projet {
-    background-color: rgba(255,255,255,0.06);
+    background-color: rgba(255,255,255,0.25);
     backdrop-filter: blur(15px);
-    border-left: 5px solid #7b5cff;
+    border-left: 5px solid #ff88cc;
     border-radius: 15px;
     padding: 1.5rem;
     margin: 1rem auto;
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
     position: relative;
     overflow: hidden;
 }
 
 .projet::before {
-    content: "";
+    content: "🌸";
     position: absolute;
-    top: -40%;
-    left: -40%;
-    width: 180%;
-    height: 180%;
-    background: linear-gradient(45deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.1;
-    filter: blur(60px);
-    animation: gradientShift 12s linear infinite;
-    z-index: 0;
+    top: -20%;
+    left: -10%;
+    font-size: 5rem;
+    opacity: 0.05;
+    animation: floatFlowers 15s linear infinite;
 }
 
 .projet:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.1);
+    box-shadow: 0 12px 40px rgba(255,136,204,0.3);
+    background: rgba(255,255,255,0.35);
 }
 
 /* ==========================
@@ -228,55 +185,63 @@ section h2 {
 
 .competence-slide {
     min-width: 240px;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.25);
     backdrop-filter: blur(15px);
-    border-left: 5px solid #7b5cff;
+    border-left: 5px solid #ff88cc;
     border-radius: 20px;
     padding: 1.5rem;
     flex-shrink: 0;
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
     position: relative;
     overflow: hidden;
 }
 
 .competence-slide::before {
-    content: "";
+    content: "🌸";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(90deg, #7b5cff, #ff72e0, #7b5cff);
-    opacity: 0.1;
-    filter: blur(50px);
-    animation: gradientShift 14s linear infinite;
-    z-index: 0;
+    top: -30%;
+    left: 50%;
+    font-size: 4rem;
+    opacity: 0.05;
+    animation: floatFlowers 18s linear infinite;
 }
 
 .competence-slide:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.12);
+    box-shadow: 0 12px 40px rgba(255,136,204,0.3);
+    background: rgba(255,255,255,0.35);
 }
 
 /* ==========================
    FOOTER
 ========================== */
 footer {
-    background-color: rgba(255,255,255,0.08);
+    background-color: rgba(255,255,255,0.2);
     backdrop-filter: blur(20px);
     padding: 1.5rem;
-    border-top: 3px solid #7b5cff;
+    border-top: 3px solid #ff88cc;
     border-radius: 15px 15px 0 0;
-    box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
     transition: box-shadow 0.3s, background 0.3s;
 }
 
+footer::before {
+    content: "🌸🌸";
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    font-size: 3rem;
+    opacity: 0.05;
+    animation: floatFlowers 16s linear infinite;
+}
+
 footer:hover {
-    box-shadow: 0 -12px 40px rgba(123,92,255,0.4);
-    background: rgba(255,255,255,0.12);
+    box-shadow: 0 -12px 40px rgba(255,136,204,0.3);
+    background: rgba(255,255,255,0.3);
 }
 
 /* ==========================
@@ -286,6 +251,12 @@ footer:hover {
     0% { transform: rotate(0deg) translate(0,0); }
     50% { transform: rotate(180deg) translate(10%,10%); }
     100% { transform: rotate(360deg) translate(0,0); }
+}
+
+@keyframes floatFlowers {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(15deg); }
+    100% { transform: translateY(0) rotate(0deg); }
 }
 
 /* ==========================
