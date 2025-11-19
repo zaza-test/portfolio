@@ -1,18 +1,23 @@
 /* =========================
    GLOBAL
 ========================== */
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0b0b14, #1a1530);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     color: #eee;
     margin: 0;
     padding: 0;
     line-height: 1.5;
     text-align: center;
-    overflow-x: hidden;
-}
-h1, h2, h3 {
-    word-wrap: break-word;
+    overflow-x: hidden; /* Empêche le scroll horizontal */
 }
 
 a {
@@ -76,6 +81,7 @@ h2 {
     padding-bottom: 5px;
     display: inline-block;
     font-size: 1.8rem;
+    word-wrap: break-word;
 }
 
 /* ==========================
@@ -91,8 +97,6 @@ h2 {
     box-shadow: none;
 }
 
-
-/* conteneur interne pour centrer le texte */
 .fullwidth-section .content-wrapper {
     max-width: 900px;
     margin: auto;
@@ -131,7 +135,6 @@ h2 {
     box-sizing: border-box;
 }
 
-
 .competence-slide {
     min-width: 240px;
     background: rgba(255,255,255,0.06);
@@ -162,6 +165,11 @@ footer {
    RESPONSIVE
 ========================== */
 @media (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
@@ -170,7 +178,12 @@ footer {
     }
 
     .competence-slide {
-        min-width: 220px;
+        min-width: 200px;
         font-size: 0.9rem;
+    }
+
+    section {
+        margin: 1rem;
+        padding: 1rem;
     }
 }
