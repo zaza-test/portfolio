@@ -8,279 +8,132 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffeef8, #ffddee); /* rose pâle doux */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    color: #333;
+    background: linear-gradient(135deg, #fff0f5, #ffe6f0); /* rose très clair */
     margin: 0;
     padding: 0;
+    color: #333;
     line-height: 1.5;
     text-align: center;
     overflow-x: hidden;
-    transition: background 0.5s;
 }
 
-/* Liens */
-a {
-    color: #b24f7a !important;
-    font-style: italic;
-    text-decoration: none;
-    transition: color 0.3s;
+/* ==========================
+   FLEURS JAPONAIS ANIMÉES
+========================== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.ibb.co/2gP7QpM/sakura-pattern.png'); /* motif fleurs japonaises */
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: 0.05;
+    pointer-events: none;
+    animation: floatFlowers 30s linear infinite;
+    z-index: 0;
 }
 
-a:hover {
-    color: #ff88cc !important;
+/* ==========================
+   ELEMENTS GLASSMORPHISME
+========================== */
+.glass {
+    position: relative;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 8px 32px rgba(255,200,220,0.1);
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 1200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1;
+}
+
+.glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(255,180,220,0.3);
 }
 
 /* ==========================
    HEADER
 ========================== */
-header {
-    padding: 1.8rem 1rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s, background 0.3s;
+header.glass {
+    border-radius: 0 0 20px 20px;
 }
 
-header::before {
-    content: "🌸🌸🌸";
-    position: absolute;
-    top: 10%;
-    right: -20%;
-    font-size: 3rem;
-    opacity: 0.1;
-    animation: floatFlowers 12s linear infinite;
-}
-
-header:hover {
-    box-shadow: 0 12px 40px rgba(255,136,204,0.4);
-    background: rgba(255, 255, 255, 0.3);
-}
-
-header h1 {
+header.glass h1 {
     font-size: 2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
-header p {
-    font-size: 1rem;
+header.glass p {
     font-style: italic;
 }
 
-nav {
-    margin-top: 0.8rem;
-    padding: 8px 16px;
-    border-radius: 25px;
+/* ==========================
+   NAV
+========================== */
+nav.glass {
     display: inline-flex;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(0,0,0,0.15);
-    transition: box-shadow 0.3s;
+    gap: 12px;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
 }
 
-nav:hover {
-    box-shadow: 0 8px 40px rgba(255,136,204,0.3);
-}
-
-nav a {
-    margin: 0 12px;
+nav.glass a {
+    text-decoration: none;
+    color: #b24f7a;
     font-weight: bold;
-    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav.glass a:hover {
+    color: #ff88cc;
 }
 
 /* ==========================
    SECTIONS
 ========================== */
-section {
-    padding: 1.5rem 1rem;
-    max-width: 1200px;
-    margin: 1.5rem auto;
-    background: rgba(255,255,255,0.3);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s, background 0.3s;
-}
-
-section::before {
-    content: "🌸";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    font-size: 4rem;
-    opacity: 0.05;
-    animation: floatFlowers 20s linear infinite;
-}
-
-section:hover {
-    box-shadow: 0 12px 40px rgba(255,136,204,0.3);
-    background: rgba(255,255,255,0.4);
-}
-
-section h2 {
-    position: relative;
-    z-index: 1;
+section.glass h2 {
     border-bottom: 2px solid #ff88cc;
-    padding-bottom: 5px;
     display: inline-block;
+    padding-bottom: 0.3rem;
     font-size: 1.8rem;
-}
-
-/* ==========================
-   PROJETS
-========================== */
-.projet {
-    background-color: rgba(255,255,255,0.25);
-    backdrop-filter: blur(15px);
-    border-left: 5px solid #ff88cc;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1rem auto;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.projet::before {
-    content: "🌸";
-    position: absolute;
-    top: -20%;
-    left: -10%;
-    font-size: 5rem;
-    opacity: 0.05;
-    animation: floatFlowers 15s linear infinite;
-}
-
-.projet:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(255,136,204,0.3);
-    background: rgba(255,255,255,0.35);
-}
-
-/* ==========================
-   COMPÉTENCES
-========================== */
-.competences-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    scroll-behavior: smooth;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.competence-slide {
-    min-width: 240px;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(15px);
-    border-left: 5px solid #ff88cc;
-    border-radius: 20px;
-    padding: 1.5rem;
-    flex-shrink: 0;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.competence-slide::before {
-    content: "🌸";
-    position: absolute;
-    top: -30%;
-    left: 50%;
-    font-size: 4rem;
-    opacity: 0.05;
-    animation: floatFlowers 18s linear infinite;
-}
-
-.competence-slide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(255,136,204,0.3);
-    background: rgba(255,255,255,0.35);
 }
 
 /* ==========================
    FOOTER
 ========================== */
-footer {
-    background-color: rgba(255,255,255,0.2);
-    backdrop-filter: blur(20px);
-    padding: 1.5rem;
-    border-top: 3px solid #ff88cc;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0 -8px 32px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s, background 0.3s;
-}
-
-footer::before {
-    content: "🌸🌸";
-    position: absolute;
-    top: 10%;
-    right: 20%;
-    font-size: 3rem;
-    opacity: 0.05;
-    animation: floatFlowers 16s linear infinite;
-}
-
-footer:hover {
-    box-shadow: 0 -12px 40px rgba(255,136,204,0.3);
-    background: rgba(255,255,255,0.3);
+footer.glass {
+    border-radius: 20px 20px 0 0;
 }
 
 /* ==========================
    ANIMATIONS
 ========================== */
-@keyframes gradientShift {
-    0% { transform: rotate(0deg) translate(0,0); }
-    50% { transform: rotate(180deg) translate(10%,10%); }
-    100% { transform: rotate(360deg) translate(0,0); }
-}
-
 @keyframes floatFlowers {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(15deg); }
-    100% { transform: translateY(0) rotate(0deg); }
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
 }
 
 /* ==========================
    RESPONSIVE
 ========================== */
 @media (max-width: 600px) {
-
-    header h1 {
+    header.glass h1 {
         font-size: 1.6rem;
     }
 
-    nav {
-        flex-direction: column;
-        gap: 8px;
-        padding: 12px;
-    }
-
-    .competence-slide {
-        min-width: 200px;
-        font-size: 0.9rem;
-    }
-
-    section {
+    section.glass {
         margin: 1rem;
         padding: 1rem;
+    }
+
+    nav.glass {
+        flex-direction: column;
     }
 }
