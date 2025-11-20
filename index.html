@@ -57,12 +57,12 @@ for (let i = 0; i < petalCount; i++) {
     petal.style.setProperty('--rotateStart', Math.random() * 360 + "deg");
     petal.style.setProperty('--rotateEnd', (Math.random() * 360 + 360) + "deg");
 
-    // Durée de chute aléatoire (6 à 14s)
-    const duration = 6 + Math.random() * 8;
+    // Durée de chute aléatoire (3 à 6s pour plus rapide)
+    const duration = 3 + Math.random() * 3;
     petal.style.animationDuration = duration + "s";
 
     // Début aléatoire pour flux continu
-    petal.style.animationDelay = Math.random() * 8 + "s";
+    petal.style.animationDelay = Math.random() * 3 + "s";
 
     container.appendChild(petal);
 }
