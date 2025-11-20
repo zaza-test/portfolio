@@ -39,20 +39,39 @@
     </p>
   </div>
 </section>
-<div class="petal-container">
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-</div>
+<div class="petals"></div>
+
+<script>
+    const container = document.querySelector('.petals');
+    const petalCount = 60; // densité augmentée
+
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+
+        // Position horizontale aléatoire
+        petal.style.left = Math.random() * 100 + "vw";
+
+        // Taille variée
+        const size = 8 + Math.random() * 12;
+        petal.style.width = size + "px";
+        petal.style.height = (size * 1.4) + "px";
+
+        // Rotation initiale
+        petal.style.setProperty('--rotateStart', Math.random() * 360 + "deg");
+        petal.style.setProperty('--rotateEnd', (Math.random() * 360 + 360) + "deg");
+
+        // Durée variable (6 à 14 sec)
+        const duration = 6 + Math.random() * 8;
+        petal.style.animationDuration = duration + "s";
+
+        // Début aléatoire pour un flux continu
+        petal.style.animationDelay = Math.random() * 8 + "s";
+
+        container.appendChild(petal);
+    }
+</script>
+
 
 
 <footer>
