@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours - Portfolio Aesa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <span class="logo-circle">AD</span>
+            <div class="topbar-text">
+                <h1>Portfolio BTS SIO SISR</h1>
+                <p>Domingues Aesa – Option SISR</p>
+            </div>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="parcours.html" class="active">Parcours</a>
+                <a href="competences.html">Compétences</a>
+                <a href="projets.html">Projets</a>
+                <a href="veille.html">Veille</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="timeline-shell">
+            <h2 class="timeline-title">Mon Parcours</h2>
+
+            <div class="timeline">
+                <!-- Bac -->
+                <div class="timeline-item left">
+                    <div class="timeline-badge">
+                        <span>2023</span>
+                    </div>
+                    <div class="timeline-card">
+                        <h3>Bac Général</h3>
+                        <p class="timeline-sub">Options Sciences de l’ingénieur &amp; Physique‑Chimie</p>
+                        <p>
+                            Obtention du bac général en juin 2023.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Fac info -->
+                <div class="timeline-item right">
+                    <div class="timeline-badge">
+                        <span>2023 – 2024</span>
+                    </div>
+                    <div class="timeline-card">
+                        <h3>Licence Informatique</h3>
+                        <p class="timeline-sub">Saint‑Étienne‑du‑Rouvray</p>
+                        <p>
+                            1ère année d’informatique à l’université. 
+                            Formation très théorique et axée sur les mathématiques,
+                            moins en phase avec mon envie d’être dans la technique.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BTS SIO -->
+                <div class="timeline-item left">
+                    <div class="timeline-badge">
+                        <span>2024 – Aujourd’hui</span>
+                    </div>
+                    <div class="timeline-card">
+                        <h3>BTS SIO – option SISR</h3>
+                        <p class="timeline-sub">Services Informatiques aux Organisations</p>
+                        <p>
+                            Formation centrée sur les infrastructures, systèmes et réseaux,
+                            en alternance, avec une forte dimension pratique.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fleurs animées -->
+    <div class="petals"></div>
+
+    <footer>
+        <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
+    </footer>
+
+    <script>
+    const container = document.querySelector('.petals');
+    const petalCount = 50;
+
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+
+        petal.style.left = Math.random() * 100 + 'vw';
+
+        const size = 8 + Math.random() * 14;
+        petal.style.width = size + 'px';
+        petal.style.height = size * 1.4 + 'px';
+
+        const duration = 5 + Math.random() * 6;
+        petal.style.animationDuration = duration + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+
+        container.appendChild(petal);
+    }
+    </script>
+</body>
+</html>
