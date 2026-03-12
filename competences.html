@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compétences – Portfolio Aesa</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences - Portfolio Aesa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <span class="logo-circle">AD</span>
+            <div class="topbar-text">
+                <h1>Portfolio BTS SIO SISR</h1>
+                <p>Domingues Aesa – Option SISR</p>
+            </div>
+            <nav>
+                <a href="index.html" >Accueil</a>
+                <a href="parcours.html">Parcours</a>
+                <a href="competences.html" class="active">Compétences</a>
+                <a href="projets.html">Projets</a>
+                <a href="veille.html">Veille</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <h1>Portfolio – BTS SIO SISR</h1>
-  <p>Par Domingues Aesa</p>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="competences.html">Compétences</a>
-    <a href="projets.html">Projets</a>
-  </nav>
-</header>
+<main>
+    <section class="hero-modern">
+        <div class="hero-col hero-col-main">
+            <p class="chip">BTS SIO • Option SISR</p>
+            <h2>Compétences techniques</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Tableau de synthèse</span>
+                    <span class="info-value">
+                        <a href="https://iecm064-my.sharepoint.com/:x:/g/personal/aesa_domingues_mediaschool_me/IQBg2wbdTyRsTKUvMdd0o8gmAf3BVE7_-KYIOrFOdnTiD5c?e=34pDrx"
+                           target="_blank">
+                            Consulter le tableau
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
 
-<section id="competences">
-  <h2>Compétences techniques</h2>
+    </section>
+</main>
 
-  <p>
-    <a href="https://iecm064-my.sharepoint.com/:x:/g/personal/aesa_domingues_mediaschool_me/IQCrQpqQ3yyIQZk-8ETVyXs0ATwUqmFHtopnXiEQGNTWKs8?e=Xz6dZw" target="_blank">tableau de synthèse</a>
-  </p>
+    <!-- Fleurs animées -->
+    <div class="petals"></div>
 
-  <div class="competences-slider">
-    <div class="competence-slide">💻 Windows Server <br>AD, DNS, DHCP, GPO, WSUS</div>
-    <div class="competence-slide">🐧 Linux <br>Ubuntu, Debian, Rocky Server, Apache, Samba, DNS, DHCP</div>
-    <div class="competence-slide">🌐 Réseaux <br>VLAN, TRUNK, port-security, routage, DHCP snooping, SSH, STP</div>
-    <div class="competence-slide">🖋 Développement <br>Python, HTML, CSS, JavaScript</div>
-    <div class="competence-slide">🛠 Logiciels <br>VMware, Packet Tracer, VS Code, WSUS, Tanium, Office</div>
-  </div>
-</section>
+    <footer>
+        <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
+    </footer>
 
-<footer>
-  <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
-</footer>
+    <script>
+    const container = document.querySelector('.petals');
+    const petalCount = 50;
 
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+
+        petal.style.left = Math.random() * 100 + 'vw';
+
+        const size = 8 + Math.random() * 14;
+        petal.style.width = size + 'px';
+        petal.style.height = size * 1.4 + 'px';
+
+        const duration = 5 + Math.random() * 6;
+        petal.style.animationDuration = duration + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+
+        container.appendChild(petal);
+    }
+    </script>
 </body>
 </html>
-
