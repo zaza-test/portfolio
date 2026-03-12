@@ -5,6 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compétences - Portfolio Aesa</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .competences-section {
+            padding: 2.5rem 0 3rem 0;
+        }
+
+        .competences-section h3 {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent, #e07b8a);
+            margin: 2.5rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+            cursor: default;
+        }
+
+        .skill-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(224,123,138,0.35);
+            transform: translateY(-2px);
+        }
+
+        .skill-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .skill-icon {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .skill-name {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text, #a3053f);
+        }
+
+        .skill-desc {
+            font-size: 0.78rem;
+            color: rgba(238, 6, 83, 0.55);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            margin-top: 0.65rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 99px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: rgba(224,123,138,0.15);
+            color: var(--accent, #e07b8a);
+            border: 1px solid rgba(224,123,138,0.25);
+        }
+
+        .skill-tag.green {
+            background: rgba(80,200,140,0.12);
+            color: #50c88c;
+            border-color: rgba(80,200,140,0.25);
+        }
+
+        .skill-tag.blue {
+            background: rgba(80,140,220,0.12);
+            color: #6ea8f7;
+            border-color: rgba(80,140,220,0.25);
+        }
+
+        .skill-tag.orange {
+            background: rgba(240,170,80,0.12);
+            color: #f0aa50;
+            border-color: rgba(240,170,80,0.25);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+            margin: 2rem 0 0 0;
+        }
+
+        /* Tableau synthèse pill */
+        .info-value a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 99px;
+            background: rgba(215, 10, 41, 0.12);
+            border: 1px solid rgba(224,123,138,0.3);
+            color: var(--accent, #e07b8a);
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .info-value a:hover {
+            background: rgba(224,123,138,0.22);
+        }
+    </style>
 </head>
 <body>
     <header class="topbar">
@@ -15,7 +132,7 @@
                 <p>Domingues Aesa – Option SISR</p>
             </div>
             <nav>
-                <a href="index.html" >Accueil</a>
+                <a href="index.html">Accueil</a>
                 <a href="parcours.html">Parcours</a>
                 <a href="competences.html" class="active">Compétences</a>
                 <a href="projets.html">Projets</a>
@@ -35,13 +152,100 @@
                     <span class="info-value">
                         <a href="https://iecm064-my.sharepoint.com/:x:/g/personal/aesa_domingues_mediaschool_me/IQBg2wbdTyRsTKUvMdd0o8gmAf3BVE7_-KYIOrFOdnTiD5c?e=34pDrx"
                            target="_blank">
-                            Consulter le tableau
+                            ↗ Consulter le tableau
                         </a>
                     </span>
                 </div>
             </div>
-        </div>
 
+            <div class="competences-section">
+
+                <!-- Réseau -->
+                <h3>🌐 Infrastructure réseau</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🏠</span>
+                            <span class="skill-name">Infrastructure SOHO</span>
+                        </div>
+                        <p class="skill-desc">Mise en place d'une infrastructure réseau Small Office / Home Office : routeur, switch, point d'accès Wi-Fi, câblage et segmentation des postes.</p>
+                        <span class="skill-tag blue">Réseau</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🔀</span>
+                            <span class="skill-name">VLAN & Routage</span>
+                        </div>
+                        <p class="skill-desc">Configuration de VLANs, routage inter-VLAN, routage dynamique et statique, trunk et access.</p>
+                        <span class="skill-tag blue">Réseau</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">📡</span>
+                            <span class="skill-name">Services réseau</span>
+                        </div>
+                        <p class="skill-desc">Déploiement et administration de services DHCP, DNS, serveur web sur serveurs Linux et Windows Server.</p>
+                        <span class="skill-tag blue">Réseau</span>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Administration système -->
+                <h3>🖥️ Administration système</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🗂️</span>
+                            <span class="skill-name">Active Directory</span>
+                        </div>
+                        <p class="skill-desc">Installation et gestion d'Active Directory sur Windows Server : création d'OU, comptes utilisateurs, groupes, GPO et politiques de sécurité.</p>
+                        <span class="skill-tag green">Sysadmin</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🎫</span>
+                            <span class="skill-name">GLPI – Ticketing</span>
+                        </div>
+                        <p class="skill-desc">Déploiement et configuration de GLPI : gestion des incidents, suivi du parc informatique.</p>
+                        <span class="skill-tag green">Sysadmin</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🐧</span>
+                            <span class="skill-name">Administration Linux</span>
+                        </div>
+                        <p class="skill-desc">Gestion de serveurs Debian/Ubuntu : gestion des droits et des fichiers, installation de services.</p>
+                        <span class="skill-tag green">Sysadmin</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">📦</span>
+                            <span class="skill-name">Virtualisation</span>
+                        </div>
+                        <p class="skill-desc">Création et administration de machines virtuelles avec VMware : snapshots, réseaux virtuels, clonage de VMs.</p>
+                        <span class="skill-tag green">Sysadmin</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🖥️</span>
+                            <span class="skill-name">Déploiement postes Windows</span>
+                        </div>
+                        <p class="skill-desc">Déploiement et configuration de postes Windows 10/11 : installation, intégration au domaine Active Directory, personnalisation via GPO.</p>
+                        <span class="skill-tag green">Sysadmin</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <span class="skill-icon">🐧</span>
+                            <span class="skill-name">Déploiement postes Linux</span>
+                        </div>
+                        <p class="skill-desc">Installation et configuration de postes clients Linux (Ubuntu, Debian) : partitionnement, environnement graphique, configuration réseau et utilisateurs.</p>
+                        <span class="skill-tag green">Sysadmin</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 </main>
 
