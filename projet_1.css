@@ -1,127 +1,69 @@
-/* =================== GLOBAL =================== */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* =========================
+   CONTENU PROJET 1
+========================== */
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: #1c1c1c;
-  color: #eee;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  line-height: 1.6;
-}
-
-/* =================== HEADER =================== */
-header {
-  background: linear-gradient(135deg, #ff0000, #900000);
-  color: white;
-  padding: 2.5rem 1rem;
-  border-bottom: 3px solid #ff0000;
-  border-radius: 0 0 15px 15px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2.3rem;
-  margin-bottom: 0.5rem;
-}
-
-/* =================== CONTENU PRINCIPAL =================== */
 main {
-  flex: 1;
-  padding: 2rem;
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(230,57,70,0.4);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: all 0.3s;
 }
 
-p {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin: 1rem 0 2rem 0;
-  max-width: 700px;
+main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(230,57,70,0.2);
+    background: rgba(255,255,255,0.7);
 }
 
-/* =================== BOUTON ACCÈS PROCÉDURE =================== */
+main p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================
+   BOUTON PROCÉDURE
+========================== */
 .lien-procedure {
-  padding: 1rem 1.8rem;
-  background: #2c2c2c;
-  border-left: 5px solid #ff0000;
-  border-radius: 10px;
-  color: #eee;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 1rem 1.8rem;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(230,57,70,0.4);
+    border-radius: 15px;
+    color: #e63946;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
 }
 
 .lien-procedure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(255,0,0,0.4);
-  color: #ffcccc;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(230,57,70,0.3);
+    background: rgba(255,255,255,0.7);
 }
 
-.lien-procedure:focus {
-  outline: 2px solid #ff0000;
-  outline-offset: 2px;
-}
-
-/* =================== BOUTON RETOUR =================== */
+/* =========================
+   BOUTON RETOUR
+========================== */
 .btn-retour {
-  padding: 0.8rem 1.8rem;
-  background: #900000;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  border: 2px solid #ff0000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  transition: 0.3s ease;
-  margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: rgba(230,57,70,0.9);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(230,57,70,0.4);
+    transition: all 0.3s;
 }
 
 .btn-retour:hover {
-  background: #ff0000;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(255,0,0,0.6);
-}
-
-.btn-retour:focus {
-  outline: 2px solid #ff0000;
-  outline-offset: 2px;
-}
-
-/* =================== FOOTER =================== */
-footer {
-  background-color: #111;
-  color: #eee;
-  padding: 1.5rem;
-  border-top: 3px solid #ff0000;
-  margin-top: auto;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-/* =================== RESPONSIVE =================== */
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-  .lien-procedure, .btn-retour {
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-    box-sizing: border-box;
-  }
+    background: #ff4d6d;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(230,57,70,0.6);
 }
