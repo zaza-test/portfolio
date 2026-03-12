@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets – Portfolio Aesa</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets – Aesa Domingues</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <span class="logo-circle">AD</span>
+            <div class="topbar-text">
+                <h1>Portfolio BTS SIO SISR</h1>
+                <p>Domingues Aesa – Option SISR</p>
+            </div>
+            <nav>
+                <a href="index.html" >Accueil</a>
+                <a href="parcours.html">Parcours</a>
+                <a href="competences.html">Compétences</a>
+                <a href="projets.html" class="active">Projets</a>
+                <a href="veille.html">Veille</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <h1>Portfolio – BTS SIO SISR</h1>
-  <p>Par Domingues Aesa</p>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="competences.html">Compétences</a>
-    <a href="projets.html">Projets</a>
-  </nav>
-</header>
+    <main>
+        <section class="projets-shell">
+            <header class="section-head">
+                <h2>Projets</h2>
+                <p>Quelques projets réalisés dans le cadre du BTS SIO SISR.</p>
+            </header>
 
-<section id="projets">
-  <h2>Mes projets</h2>
+            <div class="projets-grid">
+                <a href="projet_1.html" class="projet-card">
+                    <h3>Projet 1</h3>
+                    <p>Cluster contrôleur de domaine sur Windows Server 2025.</p>
+                </a>
 
-  <div class="projet">
-    <h3><a href="projet_1.html">Projet 1 : Cluster AD sur Windows Server 2025</a></h3>
-    <p>Conception d’un cluster de deux serveurs AD DC (Active Directory Domain Controller).</p>
-  </div>
+                <a href="projet_2.html" class="projet-card">
+                    <h3>Projet 2</h3>
+                    <p>Routage dynamique avec OSPF et séparation réseau via des VLAN.</p>
+                </a>
 
-  <div class="projet">
-    <h3><a href="projet_2.html">Projet 2 : Cluster DNS sur Windows Server 2025</a></h3>
-    <p>Conception d’un cluster constitué de deux serveurs DNS.</p>
-  </div>
+                <a href="projet_3.html" class="projet-card">
+                    <h3>Projet 3</h3>
+                    <p>Procédure mise en place d'un outil de ticketing : GLPI.</p>
+                </a> 
 
-  <div class="projet">
-    <h3>Projet 3 : en cours…</h3>
-    <p>courte description</p>
-  </div>
+                <a href="projet_4.html" class="projet-card">
+                    <h3>Projet 4</h3>
+                    <p>Mise en place d'un serveur web et du site de l'entreprise</p>
+                </a>
 
-</section>
 
-<footer>
-  <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
-</footer>
+                <a href="projet_5.html" class="projet-card">
+                    <h3>Projet 5</h3>
+                    <p>Mise en place d'une infrastructure réseau LAN avec wifi et ip-phone.</p>
+                </a>
+            </div>
+        </section>
+    </main>
 
+    <!-- Fleurs animées -->
+    <div class="petals"></div>
+
+    <footer>
+        <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
+    </footer>
+
+    <script>
+    const container = document.querySelector('.petals');
+    const petalCount = 50;
+
+    for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+
+        petal.style.left = Math.random() * 100 + 'vw';
+
+        const size = 8 + Math.random() * 14;
+        petal.style.width = size + 'px';
+        petal.style.height = size * 1.4 + 'px';
+
+        const duration = 5 + Math.random() * 6;
+        petal.style.animationDuration = duration + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+
+        container.appendChild(petal);
+    }
+    </script>
 </body>
 </html>
-
