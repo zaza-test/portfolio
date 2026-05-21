@@ -3,8 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences - Portfolio Aesa</title>
+    <title>Veille – Portfolio Aesa</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========================
+           ACCORDÉON VEILLE
+        ========================== */
+ 
+        .veille-accordion {
+            border: 1px solid rgba(230,57,70,0.22);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 6px 24px rgba(230,57,70,0.09);
+            transition: box-shadow 0.3s;
+        }
+ 
+        .veille-accordion:hover {
+            box-shadow: 0 10px 35px rgba(230,57,70,0.18);
+        }
+ 
+        /* Bouton titre cliquable */
+        .veille-accordion-toggle {
+            width: 100%;
+            background: rgba(255,255,255,0.96);
+            border: none;
+            cursor: pointer;
+            padding: 1.2rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            text-align: left;
+            transition: background 0.25s;
+        }
+ 
+        .veille-accordion-toggle:hover {
+            background: rgba(255,240,244,0.98);
+        }
+ 
+        .veille-accordion.open .veille-accordion-toggle {
+            background: radial-gradient(circle at top left, rgba(255,240,244,0.97), rgba(255,255,255,0.97));
+            border-bottom: 1px solid rgba(230,57,70,0.15);
+        }
+ 
+        .veille-accordion-toggle .veille-icon {
+            flex-shrink: 0;
+        }
+ 
+        .veille-toggle-text {
+            flex: 1;
+        }
+ 
+        .veille-toggle-text .veille-tag {
+            display: block;
+            margin: 0 0 0.15rem;
+        }
+ 
+        .veille-toggle-text h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #d62839;
+        }
+ 
+        /* Chevron animé */
+        .veille-chevron {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(230,57,70,0.08);
+            border: 1px solid rgba(230,57,70,0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s ease, background 0.25s;
+            color: #e63946;
+            font-size: 0.75rem;
+        }
+ 
+        .veille-accordion.open .veille-chevron {
+            transform: rotate(180deg);
+            background: rgba(230,57,70,0.14);
+        }
+ 
+        /* Corps accordéon */
+        .veille-accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255,255,255,0.95);
+        }
+ 
+        .veille-accordion.open .veille-accordion-body {
+            max-height: 3000px;
+        }
+ 
+        .veille-accordion-inner {
+            padding: 1.4rem 1.4rem 1.7rem;
+        }
+ 
+        /* Conserver le style existant à l'intérieur */
+        .veille-accordion-inner .veille-chapo {
+            margin: 0 0 1.1rem;
+        }
+ 
+        .veille-accordion-inner .veille-columns {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 1.5rem;
+        }
+ 
+        @media screen and (max-width: 900px) {
+            .veille-accordion-inner .veille-columns {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+        }
+ 
+ 
+    </style>
 </head>
 <body>
     <header class="topbar">
@@ -24,162 +141,156 @@
             </nav>
         </div>
     </header>
-
-<main>
-    <section class="veille-shell">
-        <h2 class="veille-title">Veille technologique</h2>
-        <p class="veille-intro">
-            Veille continue autour de la cybersécurité, des nouveaux logiciels et des évolutions
-            du marché matériel, pour anticiper les impacts sur l’infrastructure et la sécurité.
-        </p>
-
-        <!-- Article 1 : Cyberattaques -->
-        <article class="veille-article veille-article-accent">
-            <header class="veille-article-head">
-                <div class="veille-icon">🎀</div>
-                <div>
-                    <p class="veille-tag">Dossier cybersécurité</p>
-                    <h3>Cyberattaques ciblant la France</h3>
-                </div>
-            </header>
-
-            <p class="veille-chapo">
-                Suivi des attaques visant des entreprises, institutions et collectivités françaises
-                afin d’identifier les vecteurs d’intrusion, les vulnérabilités exploitées
-                et les réponses mises en place.
+ 
+    <main>
+        <section class="veille-shell">
+            <h2 class="veille-title">Veille technologique</h2>
+            <p class="veille-intro">
+                Veille continue autour de la cybersécurité, des nouveaux logiciels et des évolutions
+                du marché matériel, pour anticiper les impacts sur l'infrastructure et la sécurité.
             </p>
-
-            <div class="veille-columns">
-                <div>
-                    <h4>Événements suivis</h4>
-                    <ul class="veille-list">
-                        <li>08/12/2025 - cyberattaque sur les fédérations françaises de sports (FFHAND,UFOLEP,FFF,FFTIR,FFC,...)</li>
-                        <li>17/12/2025 - mise en ligne d'une fuite de données de la CAF suite à sa cyberattaque</li>
-                        <li>23/12/2025 - cyberattaque (déni de service distribué) ciblant "La Poste" </li>
-                        <li>01/01/2026 - cyberattaque (déni de service) ciblant "La Poste" une nouvelle fois</li>
-                        <li>10/01/2026 – le groupe de ransomware Qilin a revendiqué sur son site de fuite de données une cyberattaque ciblant Bouygues Énergies & Service.</li>
-                        <li>19/01/2026 – URSSAF compromission d'un compte prestataire qui a permis l'accès à leur API.</li>
-                        <li>27/01/2026 - fuite de données concernant la CNAM.</li>
-                        <li>30/01/2026 - fuite de données de Code Rousseau et ManoMano.</li>
-                        <li> 27/02/2026 - Cyberattaque de Cegedim (logiciel médical) : 8 millions de notes sensibles piratés. </li>
-                        <li>03/03/2026 - Plus d'1 millions de moniteurs pour bébé et de caméras de la marque Meari, vendu sur Amazon, ont été compromis</li>
-                        <li> 05/03/2026 - Cyberattaque d'Immo jeune,700 000 dossiers de logements pour étudiants piratés.</li>
-                        <li> 06/03/2026 - Le prestataire de billeterie du centre des monuments nationaux victime d'un rançonlogiciel</li>
-                        <li>07/03/2026 - Synlab, le géant des laboratoires français, victime d'une cyebrattaque : 161 Go de données concernées.</li>
-                        <li>11/03/2026 - fuite de données du dispositif carte jeune région de la région Occitanie.</li>
-
-                    </ul>
-                </div>
-                <div>
-                    <h4>Sources</h4>
-                    <ul class="veille-list">
-                        <li>LinkedIn : Florian Burnel, Mathilde de Roumilly, Gabriel Minchola, …</li>
-                        <li>X : International Cyber Digest, SaxX, Malwarebytes, Christophe Boutry, …</li>
-                        <li>article : XMCO</li>
-                        <li>google alertes</li>
-                    </ul>
+ 
+            <!-- Accordéon 1 : Cyberattaques -->
+            <div class="veille-accordion" id="acc-cyber">
+                <button class="veille-accordion-toggle" aria-expanded="false" aria-controls="body-cyber">
+                    <div class="veille-icon">🎀</div>
+                    <div class="veille-toggle-text">
+                        <p class="veille-tag">Dossier cybersécurité</p>
+                        <h3>Cyberattaques ciblant la France</h3>
+                    </div>
+                    <div class="veille-chevron">▼</div>
+                </button>
+                <div class="veille-accordion-body" id="body-cyber" role="region">
+                    <div class="veille-accordion-inner">
+                        <p class="veille-chapo">
+                            Suivi des attaques visant des entreprises, institutions et collectivités françaises
+                            afin d'identifier les vecteurs d'intrusion, les vulnérabilités exploitées
+                            et les réponses mises en place.
+                        </p>
+                        <div class="veille-columns">
+                            <div>
+                                <h4>Événements suivis</h4>
+                                <ul class="veille-list">
+                                    <li>08/12/2025 - cyberattaque sur les fédérations françaises de sports (FFHAND, UFOLEP, FFF, FFTIR, FFC,…)</li>
+                                    <li>17/12/2025 - mise en ligne d'une fuite de données de la CAF suite à sa cyberattaque</li>
+                                    <li>23/12/2025 - cyberattaque (déni de service distribué) ciblant "La Poste"</li>
+                                    <li>01/01/2026 - cyberattaque (déni de service) ciblant "La Poste" une nouvelle fois</li>
+                                    <li>10/01/2026 – le groupe de ransomware Qilin a revendiqué sur son site de fuite de données une cyberattaque ciblant Bouygues Énergies &amp; Service.</li>
+                                    <li>19/01/2026 – URSSAF : compromission d'un compte prestataire qui a permis l'accès à leur API.</li>
+                                    <li>27/01/2026 - fuite de données concernant la CNAM.</li>
+                                    <li>30/01/2026 - fuite de données de Code Rousseau et ManoMano.</li>
+                                    <li>27/02/2026 - Cyberattaque de Cegedim (logiciel médical) : 8 millions de notes sensibles piratés.</li>
+                                    <li>03/03/2026 - Plus d'1 million de moniteurs pour bébé et de caméras de la marque Meari, vendus sur Amazon, ont été compromis.</li>
+                                    <li>05/03/2026 - Cyberattaque d'Immo Jeune, 700 000 dossiers de logements pour étudiants piratés.</li>
+                                    <li>06/03/2026 - Le prestataire de billetterie du centre des monuments nationaux victime d'un rançongiciel.</li>
+                                    <li>07/03/2026 - Synlab, le géant des laboratoires français, victime d'une cyberattaque : 161 Go de données concernées.</li>
+                                    <li>11/03/2026 - fuite de données du dispositif carte jeune région de la région Occitanie.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Sources</h4>
+                                <ul class="veille-list">
+                                    <li>LinkedIn : Florian Burnel, Mathilde de Roumilly, Gabriel Minchola, …</li>
+                                    <li>X : International Cyber Digest, SaxX, Malwarebytes, Christophe Boutry, …</li>
+                                    <li>Article : XMCO</li>
+                                    <li>Google Alertes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
-
-        <div class="veille-separator">
-            <span>Logiciels</span>
-        </div>
-
-        <!-- Article 2 : Nouveaux logiciels -->
-        <article class="veille-article veille-article-soft">
-            <header class="veille-article-head">
-                <div class="veille-icon">🎀</div>
-                <div>
-                    <p class="veille-tag">Dossier logiciels</p>
-                    <h3>Nouveaux logiciels et outils</h3>
-                </div>
-            </header>
-
-            <p class="veille-chapo">
-                Mise en avant des outils récents ou moins connus utilisés pour l’administration,
-                la supervision ou la sécurité, avec une attention particulière aux projets open‑source.
-            </p>
-
-            <div class="veille-columns">
-                <div>
-                    <h4>Sujets suivis</h4>
-                    <ul class="veille-list">
-                        <li>11/01/2026 - Logiciels permettant de désactiver des composants d’IA non souhaités
-                            (par exemple certains modules Copilot).</li>
-                        <li>23/01/2026 - un chercheur en sécurité venant d'Australie est parvenu à construire un outil de surveillance masse avec Waze. Il a réussi a lier les noms d'utilisateurs à leur réelle identité.</li>    
-                        <li>24/01/2026 - W social alternative européenne à X</li>
-                        <li>02/2026 - BruteForceAI : utilise l'IA + navigateur automatisé pour détecter seul les pages de connexion, <br> lancer des attaques brute force de façon humaine et remonte les succès via Discord/Slack/Teams. </li>
-                        <li>25/02/2026 - Multidrive est un outil Windows gratuit. Il permet le clonage disque-à-disque, la sauvegarde et l'effacement sécurisé des disques. <br> Il a un mode CLI pour automatiser les sauvegarde via script. </li>
-                        <li>02/03/2026 - GrapheneOS : partenariat avec Motorola qui va fournir des smartphones équipés nativement de GrapheneOS <br>(un système d'exploitation axé sur la vie privée, la sécurité et la "dé-googlisation") </li>
-                        <li>05/03/2026 - découverte de VirtualBrowser, un outil développé en 2024 par Oodrive qui permet une isolation total du web (le navigateur s'exécute dans un conteneur sécurisé et jetable),<br>un flux vidéo sécurisé et zéro empreinte car à la fermeture de la session le conteneur est détruit. </li>
-                        <li>09/03/2026 - SargeBot : l'agent IA d'Osint. Il explore les base de données, les APIs, les sites webs,...</li>
-                        <li>11/03/2026 - WorldView : outil qui permet de visualiser, en 4D, l'opération militaire Epic Fury.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Sources</h4>
-                    <ul class="veille-list">
-                        <li>X : GitHub Projects Community et comptes présentant des projets open‑source.</li>
-                        <li>google alertes</li>
-                    </ul>
+ 
+            <!-- Accordéon 2 : Logiciels -->
+            <div class="veille-accordion" id="acc-logiciels">
+                <button class="veille-accordion-toggle" aria-expanded="false" aria-controls="body-logiciels">
+                    <div class="veille-icon">🎀</div>
+                    <div class="veille-toggle-text">
+                        <p class="veille-tag">Dossier logiciels</p>
+                        <h3>Nouveaux logiciels et outils</h3>
+                    </div>
+                    <div class="veille-chevron">▼</div>
+                </button>
+                <div class="veille-accordion-body" id="body-logiciels" role="region">
+                    <div class="veille-accordion-inner">
+                        <p class="veille-chapo">
+                            Mise en avant des outils récents ou moins connus utilisés pour l'administration,
+                            la supervision ou la sécurité, avec une attention particulière aux projets open‑source.
+                        </p>
+                        <div class="veille-columns">
+                            <div>
+                                <h4>Sujets suivis</h4>
+                                <ul class="veille-list">
+                                    <li>11/01/2026 - Logiciels permettant de désactiver des composants d'IA non souhaités (par exemple certains modules Copilot).</li>
+                                    <li>23/01/2026 - Un chercheur en sécurité australien est parvenu à construire un outil de surveillance de masse avec Waze. Il a réussi à lier les noms d'utilisateurs à leur réelle identité.</li>
+                                    <li>24/01/2026 - W Social : alternative européenne à X.</li>
+                                    <li>02/2026 - BruteForceAI : utilise l'IA + navigateur automatisé pour détecter seul les pages de connexion, lancer des attaques brute force de façon humaine et remonte les succès via Discord/Slack/Teams.</li>
+                                    <li>25/02/2026 - Multidrive : outil Windows gratuit. Clonage disque-à-disque, sauvegarde et effacement sécurisé. Mode CLI pour automatiser les sauvegardes via script.</li>
+                                    <li>02/03/2026 - GrapheneOS : partenariat avec Motorola qui va fournir des smartphones équipés nativement de GrapheneOS (OS axé sur la vie privée, la sécurité et la "dé-googlisation").</li>
+                                    <li>05/03/2026 - VirtualBrowser : outil développé en 2024 par Oodrive permettant une isolation totale du web (navigateur dans un conteneur sécurisé et jetable, zéro empreinte à la fermeture).</li>
+                                    <li>09/03/2026 - SargeBot : l'agent IA d'OSINT. Il explore les bases de données, les APIs, les sites webs…</li>
+                                    <li>11/03/2026 - WorldView : outil permettant de visualiser, en 4D, l'opération militaire Epic Fury.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Sources</h4>
+                                <ul class="veille-list">
+                                    <li>X : GitHub Projects Community et comptes présentant des projets open‑source.</li>
+                                    <li>Google Alertes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
-
-        <div class="veille-separator">
-            <span>Marché matériel</span>
-        </div>
-
-        <!-- Article 3 : Entreprises et matériel -->
-        <article class="veille-article veille-article-accent">
-            <header class="veille-article-head">
-                <div class="veille-icon">🎀</div>
-                <div>
-                    <p class="veille-tag">Nouvelles sur le marché informatique</p>
-                    <h3>Changements des entreprises informatiques</h3>
-                </div>
-            </header>
-
-            <p class="veille-chapo">
-                Suivi des décisions stratégiques des fabricants, les nouvelles réglementations mise en place.
-            </p>
-
-            <div class="veille-columns">
-                <div>
-                    <h4>sujets suivis</h4>
-                    <ul class="veille-list">
-                        <li>date – retrait de Micron du marché de la RAM pour les particuliers au profit des centre IA,
-                            hausse des prix constatée.</li>
-                        <li>date – retrait d’un acteur du marché des GPU, tension sur l’offre
-                            et augmentation des coûts.</li>
-                        <li>01/2026 - L'ANSSI publie ses recommandations pour protéger nos smartphones.</li>
-                        <li>29/01/2026 - La CNIL inflige 5 millions d'euros d'amende à France Travail suite à une fuite de données <br> (manquement en terme de sécurité au niveau de l'authentification, les journaux et la gestion de privilèges.)</li>
-                        <li>09/02/2026 - Discord adopte la vérification de l'âge</li>
-                        <li>27/02/2026 - Iphone et Ipad officiellement homologués "NATO restricted" : une première historique pour des appareils grand publics</li>
-                        <li> 11/03/2026 - raccourcissement durée de vie maximale des certificats SSL/TLS. Le but arriver à 47 jours max en mars 2029. 
-                            <br>Ce changement permettrait de réduire la fenêtre d'exposition en cas de compromission.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Sources</h4>
-                    <ul class="veille-list">
-                        <li>google alertes</li>
-                        <li>linkedin</li>
-                        <li>X (anciennement Twitter)</li>
-                    </ul>
+ 
+            <!-- Accordéon 3 : Marché matériel -->
+            <div class="veille-accordion" id="acc-marche">
+                <button class="veille-accordion-toggle" aria-expanded="false" aria-controls="body-marche">
+                    <div class="veille-icon">🎀</div>
+                    <div class="veille-toggle-text">
+                        <p class="veille-tag">Nouvelles sur le marché informatique</p>
+                        <h3>Changements des entreprises informatiques</h3>
+                    </div>
+                    <div class="veille-chevron">▼</div>
+                </button>
+                <div class="veille-accordion-body" id="body-marche" role="region">
+                    <div class="veille-accordion-inner">
+                        <p class="veille-chapo">
+                            Suivi des décisions stratégiques des fabricants, les nouvelles réglementations mises en place.
+                        </p>
+                        <div class="veille-columns">
+                            <div>
+                                <h4>Sujets suivis</h4>
+                                <ul class="veille-list">
+                                    <li>– Retrait de Micron du marché de la RAM pour les particuliers au profit des centres IA, hausse des prix constatée.</li>
+                                    <li>– Retrait d'un acteur du marché des GPU, tension sur l'offre et augmentation des coûts.</li>
+                                    <li>01/2026 - L'ANSSI publie ses recommandations pour protéger nos smartphones.</li>
+                                    <li>29/01/2026 - La CNIL inflige 5 millions d'euros d'amende à France Travail suite à une fuite de données (manquements en terme de sécurité : authentification, journaux et gestion de privilèges).</li>
+                                    <li>09/02/2026 - Discord adopte la vérification de l'âge.</li>
+                                    <li>27/02/2026 - iPhone et iPad officiellement homologués "NATO restricted" : une première historique pour des appareils grand public.</li>
+                                    <li>11/03/2026 - Raccourcissement de la durée de vie maximale des certificats SSL/TLS. Objectif : 47 jours max en mars 2029, pour réduire la fenêtre d'exposition en cas de compromission.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Sources</h4>
+                                <ul class="veille-list">
+                                    <li>Google Alertes</li>
+                                    <li>LinkedIn</li>
+                                    <li>X (anciennement Twitter)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </article>
-    </section>
-</main>
-
-
-
-
+ 
+        </section>
+    </main>
+ 
     <!-- Fleurs animées -->
     <div class="petals"></div>
-
+ 
     <footer>
         <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
         <div class="footer-legal">
@@ -187,27 +298,42 @@
             <a href="politique-confidentialite.html">Politique de confidentialité</a>
         </div>
     </footer>
-
+ 
     <script>
+    // Pétales
     const container = document.querySelector('.petals');
     const petalCount = 50;
-
     for (let i = 0; i < petalCount; i++) {
         const petal = document.createElement('div');
         petal.classList.add('petal');
-
         petal.style.left = Math.random() * 100 + 'vw';
-
         const size = 8 + Math.random() * 14;
         petal.style.width = size + 'px';
         petal.style.height = size * 1.4 + 'px';
-
         const duration = 5 + Math.random() * 6;
         petal.style.animationDuration = duration + 's';
         petal.style.animationDelay = Math.random() * 5 + 's';
-
         container.appendChild(petal);
     }
+ 
+    // Accordéons
+    document.querySelectorAll('.veille-accordion-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const accordion = toggle.closest('.veille-accordion');
+            const isOpen = accordion.classList.contains('open');
+ 
+            // Fermer tous les autres (comportement exclusif, optionnel)
+            // document.querySelectorAll('.veille-accordion.open').forEach(a => {
+            //     a.classList.remove('open');
+            //     a.querySelector('.veille-accordion-toggle').setAttribute('aria-expanded', 'false');
+            //     const b = a.querySelector('.veille-status-badge');
+            //     if (b) b.textContent = 'Fermé';
+            // });
+ 
+            accordion.classList.toggle('open', !isOpen);
+            toggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+    });
     </script>
 </body>
 </html>
