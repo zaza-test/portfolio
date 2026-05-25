@@ -9,7 +9,7 @@
         /* ========================
            ACCORDÉON VEILLE
         ========================== */
- 
+
         .veille-accordion {
             border: 1px solid rgba(230,57,70,0.22);
             border-radius: 20px;
@@ -18,12 +18,11 @@
             box-shadow: 0 6px 24px rgba(230,57,70,0.09);
             transition: box-shadow 0.3s;
         }
- 
+
         .veille-accordion:hover {
             box-shadow: 0 10px 35px rgba(230,57,70,0.18);
         }
- 
-        /* Bouton titre cliquable */
+
         .veille-accordion-toggle {
             width: 100%;
             background: rgba(255,255,255,0.96);
@@ -36,91 +35,175 @@
             text-align: left;
             transition: background 0.25s;
         }
- 
+
         .veille-accordion-toggle:hover {
             background: rgba(255,240,244,0.98);
         }
- 
+
         .veille-accordion.open .veille-accordion-toggle {
             background: radial-gradient(circle at top left, rgba(255,240,244,0.97), rgba(255,255,255,0.97));
             border-bottom: 1px solid rgba(230,57,70,0.15);
         }
- 
-        .veille-accordion-toggle .veille-icon {
-            flex-shrink: 0;
-        }
- 
-        .veille-toggle-text {
-            flex: 1;
-        }
- 
-        .veille-toggle-text .veille-tag {
-            display: block;
-            margin: 0 0 0.15rem;
-        }
- 
-        .veille-toggle-text h3 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: #d62839;
-        }
- 
-        /* Chevron animé */
+
+        .veille-accordion-toggle .veille-icon { flex-shrink: 0; }
+
+        .veille-toggle-text { flex: 1; }
+        .veille-toggle-text .veille-tag { display: block; margin: 0 0 0.15rem; }
+        .veille-toggle-text h3 { margin: 0; font-size: 1.25rem; color: #d62839; }
+
         .veille-chevron {
             flex-shrink: 0;
-            width: 28px;
-            height: 28px;
+            width: 28px; height: 28px;
             border-radius: 50%;
             background: rgba(230,57,70,0.08);
             border: 1px solid rgba(230,57,70,0.22);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             transition: transform 0.35s ease, background 0.25s;
-            color: #e63946;
-            font-size: 0.75rem;
+            color: #e63946; font-size: 0.75rem;
         }
- 
+
         .veille-accordion.open .veille-chevron {
             transform: rotate(180deg);
             background: rgba(230,57,70,0.14);
         }
- 
-        /* Corps accordéon */
+
         .veille-accordion-body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             background: rgba(255,255,255,0.95);
         }
- 
+
         .veille-accordion.open .veille-accordion-body {
-            max-height: 3000px;
+            max-height: 6000px;
         }
- 
+
         .veille-accordion-inner {
             padding: 1.4rem 1.4rem 1.7rem;
         }
- 
-        /* Conserver le style existant à l'intérieur */
+
         .veille-accordion-inner .veille-chapo {
-            margin: 0 0 1.1rem;
+            margin: 0 0 1.4rem;
+            font-size: 0.93rem;
+            color: #555;
         }
- 
-        .veille-accordion-inner .veille-columns {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-            gap: 1.5rem;
+
+        /* ========================
+           CARTES ÉVÉNEMENTS
+        ========================== */
+
+        .veille-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            margin-bottom: 1.5rem;
         }
- 
-        @media screen and (max-width: 900px) {
-            .veille-accordion-inner .veille-columns {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
+
+        .veille-card {
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(230,57,70,0.12);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
         }
- 
- 
+
+        .veille-card:hover {
+            background: rgba(255,246,248,0.98);
+            border-color: rgba(230,57,70,0.28);
+            transform: translateX(3px);
+        }
+
+        .veille-card-date {
+            flex-shrink: 0;
+            min-width: 80px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #fff;
+            background: linear-gradient(135deg, #e63946, #c9184a);
+            border-radius: 6px;
+            padding: 0.25rem 0.5rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-top: 0.1rem;
+        }
+
+        .veille-card-date.future {
+            background: linear-gradient(135deg, #f0aa50, #d97706);
+        }
+
+        .veille-card-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .veille-card-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #c9184a;
+            margin: 0 0 0.2rem;
+            line-height: 1.35;
+        }
+
+        .veille-card-desc {
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ========================
+           STATS + SOURCES
+        ========================== */
+
+        .veille-stats-bar {
+            background: rgba(230,57,70,0.05);
+            border: 1px solid rgba(230,57,70,0.15);
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+            font-size: 0.78rem;
+            color: #888;
+            margin-bottom: 1.2rem;
+        }
+
+        .veille-sources {
+            border-top: 1px solid rgba(230,57,70,0.1);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .veille-sources h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #c9184a;
+            margin: 0 0 0.55rem;
+        }
+
+        .veille-sources-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            list-style: none;
+            padding: 0; margin: 0;
+        }
+
+        .veille-sources-list li {
+            font-size: 0.75rem;
+            color: #666;
+            background: rgba(230,57,70,0.06);
+            border: 1px solid rgba(230,57,70,0.15);
+            border-radius: 99px;
+            padding: 0.15rem 0.65rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .veille-card-date { min-width: 64px; font-size: 0.62rem; }
+        }
     </style>
 </head>
 <body>
@@ -141,7 +224,7 @@
             </nav>
         </div>
     </header>
- 
+
     <main>
         <section class="veille-shell">
             <h2 class="veille-title">Veille technologique</h2>
@@ -149,7 +232,7 @@
                 Veille continue autour de la cybersécurité, des nouveaux logiciels et des évolutions
                 du marché matériel, pour anticiper les impacts sur l'infrastructure et la sécurité.
             </p>
- 
+
             <!-- Accordéon 1 : Cyberattaques -->
             <div class="veille-accordion" id="acc-cyber">
                 <button class="veille-accordion-toggle" aria-expanded="false" aria-controls="body-cyber">
@@ -162,45 +245,204 @@
                 </button>
                 <div class="veille-accordion-body" id="body-cyber" role="region">
                     <div class="veille-accordion-inner">
-                        <p class="veille-chapo">
-                            Suivi des attaques visant des entreprises, institutions et collectivités françaises
-                            afin d'identifier les vecteurs d'intrusion, les vulnérabilités exploitées
-                            et les réponses mises en place.
-                        </p>
-                        <div class="veille-columns">
-                            <div>
-                                <h4>Événements suivis</h4>
-                                <ul class="veille-list">
-                                    <li>08/12/2025 - cyberattaque sur les fédérations françaises de sports (FFHAND, UFOLEP, FFF, FFTIR, FFC,…)</li>
-                                    <li>17/12/2025 - mise en ligne d'une fuite de données de la CAF suite à sa cyberattaque</li>
-                                    <li>23/12/2025 - cyberattaque (déni de service distribué) ciblant "La Poste"</li>
-                                    <li>01/01/2026 - cyberattaque (déni de service) ciblant "La Poste" une nouvelle fois</li>
-                                    <li>10/01/2026 – le groupe de ransomware Qilin a revendiqué sur son site de fuite de données une cyberattaque ciblant Bouygues Énergies &amp; Service.</li>
-                                    <li>19/01/2026 – URSSAF : compromission d'un compte prestataire qui a permis l'accès à leur API.</li>
-                                    <li>27/01/2026 - fuite de données concernant la CNAM.</li>
-                                    <li>30/01/2026 - fuite de données de Code Rousseau et ManoMano.</li>
-                                    <li>27/02/2026 - Cyberattaque de Cegedim (logiciel médical) : 8 millions de notes sensibles piratés.</li>
-                                    <li>03/03/2026 - Plus d'1 million de moniteurs pour bébé et de caméras de la marque Meari, vendus sur Amazon, ont été compromis.</li>
-                                    <li>05/03/2026 - Cyberattaque d'Immo Jeune, 700 000 dossiers de logements pour étudiants piratés.</li>
-                                    <li>06/03/2026 - Le prestataire de billetterie du centre des monuments nationaux victime d'un rançongiciel.</li>
-                                    <li>07/03/2026 - Synlab, le géant des laboratoires français, victime d'une cyberattaque : 161 Go de données concernées.</li>
-                                    <li>11/03/2026 - fuite de données du dispositif carte jeune région de la région Occitanie.</li>
-                                </ul>
+                        <p class="veille-chapo">Suivi des attaques visant des entreprises, institutions et collectivités françaises afin d'identifier les vecteurs d'intrusion, les vulnérabilités exploitées et les réponses mises en place.</p>
+
+                        <div class="veille-cards">
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">08/12/2025</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Fédérations sportives françaises (FFHAND, UFOLEP, FFF, FFTIR, FFC…)</p>
+                                    <p class="veille-card-desc">Vague de cyberattaques ciblant simultanément plusieurs fédérations, exposant les données personnelles de centaines de milliers de licenciés.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Sources</h4>
-                                <ul class="veille-list">
-                                    <li>LinkedIn : Florian Burnel, Mathilde de Roumilly, Gabriel Minchola, …</li>
-                                    <li>X : International Cyber Digest, SaxX, Malwarebytes, Christophe Boutry, …</li>
-                                    <li>Article : XMCO</li>
-                                    <li>Google Alertes</li>
-                                </ul>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">17/12/2025</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CAF</p>
+                                    <p class="veille-card-desc">Publication sur le dark web d'une fuite de données issue d'une cyberattaque antérieure contre la Caisse d'Allocations Familiales.</p>
+                                </div>
                             </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">23/12/2025 &amp; 01/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">La Poste (x2)</p>
+                                    <p class="veille-card-desc">Deux attaques par déni de service distribué (DDoS) en moins de dix jours, perturbant les services en ligne à des périodes de forte activité.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">10/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Bouygues Énergies &amp; Services</p>
+                                    <p class="veille-card-desc">Le groupe de ransomware Qilin revendique une cyberattaque et menace de publier les données exfiltrées.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">12/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Fédération française de tennis + autres fédérations</p>
+                                    <p class="veille-card-desc">Cyberattaque par phishing visant la FFT, plainte déposée. Autres fédérations touchées (UNSS, FFGym, FFA, voile, natation, golf) — plusieurs millions de licenciés exposés.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">19/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">URSSAF</p>
+                                    <p class="veille-card-desc">Compromission d'un compte prestataire ayant permis un accès non autorisé à l'API, potentiellement 12 millions de salariés concernés.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">27/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CNAM</p>
+                                    <p class="veille-card-desc">Fuite de données personnelles d'assurés sociaux, dont les informations d'identité et de remboursements.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">30/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Code Rousseau &amp; ManoMano</p>
+                                    <p class="veille-card-desc">Deux fuites de données simultanées touchant une plateforme d'enseignement du code de la route et un marketplace de bricolage.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">27/02/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Cegedim Santé</p>
+                                    <p class="veille-card-desc">8 millions de notes médicales sensibles exfiltrées depuis le logiciel MLM — la plus grande fuite de données médicales jamais révélée en France à ce jour.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Immo Jeune</p>
+                                    <p class="veille-card-desc">700 000 dossiers de demandes de logement étudiant piratés, incluant pièces d'identité et justificatifs de revenus.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">06/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Centre des monuments nationaux</p>
+                                    <p class="veille-card-desc">Le prestataire de billetterie victime d'un rançongiciel, perturbant la vente de billets pour des sites patrimoniaux majeurs.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">07/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Synlab</p>
+                                    <p class="veille-card-desc">Le géant des laboratoires d'analyse médicale touché : 161 Go de données concernées, incluant des résultats d'analyses de patients.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">11/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Région Occitanie</p>
+                                    <p class="veille-card-desc">Fuite de données du dispositif Carte Jeune Région, exposant les informations de nombreux jeunes bénéficiaires.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">~03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">FICOBA (Bercy)</p>
+                                    <p class="veille-card-desc">Fuite du fichier national des comptes bancaires : 1,2 million de comptes exposés, géré par la Direction générale des finances publiques.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">~03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CHU de Lyon</p>
+                                    <p class="veille-card-desc">Cyberattaque paralysant les services pendant 48 h, 1 200 consultations reportées. Le secteur santé représente 32 % des cyberattaques recensées en France en 2026.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">15/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">ANTS / France Titres</p>
+                                    <p class="veille-card-desc">Cyberattaque contre le portail gérant passeports, CNI, permis de conduire et cartes grises : jusqu'à 19 millions de profils compromis. Confirmée par le ministère de l'Intérieur le 21 avril.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">~04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Permis de chasser</p>
+                                    <p class="veille-card-desc">Fuite du guichet national des permis de chasser : ~1 million de chasseurs concernés, données publiées sur le dark web. Risque secondaire de ciblage physique (présence d'armes déclarée dans les fichiers).</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">20/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Arrestation du hacker "HexDex"</p>
+                                    <p class="veille-card-desc">Un jeune homme de 21 ans interpellé en Vendée par la BL2C, soupçonné de plus de 100 piratages depuis décembre 2025 : fédérations sportives, Éducation nationale, Système d'Information sur les Armes. Revendait les données sur BreachForum et Darkforum.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">01/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">OFII</p>
+                                    <p class="veille-card-desc">L'Office Français de l'Immigration et de l'Intégration confirme le vol des données de 2,1 millions de dossiers d'étrangers résidant en France, mis en vente sur le dark web.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">03/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Ville de Quiberon</p>
+                                    <p class="veille-card-desc">La commune bretonne victime d'une cyberattaque revendiquée par le groupe Qilin, perturbant les services municipaux et contraignant les usagers à reporter leurs démarches.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">14/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Groupe Pierre &amp; Vacances</p>
+                                    <p class="veille-card-desc">Cyberattaque ayant entraîné la fuite de 1,6 million de dossiers de réservations clients, incluant des informations personnelles et de séjour.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">11/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Rapport InterCERT France 2026</p>
+                                    <p class="veille-card-desc">Les comptes compromis sont désormais le principal vecteur d'entrée dans les systèmes français. Les méthodes restent souvent basiques (credential stuffing, phishing) mais efficaces faute de MFA et de gestion des accès.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="veille-stats-bar">📊 Chiffres clés 2026 : +87 % de cyberattaques vs 2025 · 2ᵉ pays mondial le plus touché par les fuites de données au T1 · Plus de 320 collectivités françaises victimes depuis janvier 2026 (RM3A).</div>
+
+                        <div class="veille-sources">
+                            <h4>Sources</h4>
+                            <ul class="veille-sources-list">
+                                <li>LinkedIn : Florian Burnel, Mathilde de Roumilly, Gabriel Minchola…</li>
+                                <li>X : SaxX, Malwarebytes, Christophe Boutry…</li>
+                                <li>ZATAZ.com</li>
+                                <li>XMCO · i-leadconsulting · FrenchBreaches</li>
+                                <li>Google Alertes</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
- 
+
             <!-- Accordéon 2 : Logiciels -->
             <div class="veille-accordion" id="acc-logiciels">
                 <button class="veille-accordion-toggle" aria-expanded="false" aria-controls="body-logiciels">
@@ -213,38 +455,178 @@
                 </button>
                 <div class="veille-accordion-body" id="body-logiciels" role="region">
                     <div class="veille-accordion-inner">
-                        <p class="veille-chapo">
-                            Mise en avant des outils récents ou moins connus utilisés pour l'administration,
-                            la supervision ou la sécurité, avec une attention particulière aux projets open‑source.
-                        </p>
-                        <div class="veille-columns">
-                            <div>
-                                <h4>Sujets suivis</h4>
-                                <ul class="veille-list">
-                                    <li>11/01/2026 - Logiciels permettant de désactiver des composants d'IA non souhaités (par exemple certains modules Copilot).</li>
-                                    <li>23/01/2026 - Un chercheur en sécurité australien est parvenu à construire un outil de surveillance de masse avec Waze. Il a réussi à lier les noms d'utilisateurs à leur réelle identité.</li>
-                                    <li>24/01/2026 - W Social : alternative européenne à X.</li>
-                                    <li>02/2026 - BruteForceAI : utilise l'IA + navigateur automatisé pour détecter seul les pages de connexion, lancer des attaques brute force de façon humaine et remonte les succès via Discord/Slack/Teams.</li>
-                                    <li>25/02/2026 - Multidrive : outil Windows gratuit. Clonage disque-à-disque, sauvegarde et effacement sécurisé. Mode CLI pour automatiser les sauvegardes via script.</li>
-                                    <li>02/03/2026 - GrapheneOS : partenariat avec Motorola qui va fournir des smartphones équipés nativement de GrapheneOS (OS axé sur la vie privée, la sécurité et la "dé-googlisation").</li>
-                                    <li>05/03/2026 - VirtualBrowser : outil développé en 2024 par Oodrive permettant une isolation totale du web (navigateur dans un conteneur sécurisé et jetable, zéro empreinte à la fermeture).</li>
-                                    <li>09/03/2026 - SargeBot : l'agent IA d'OSINT. Il explore les bases de données, les APIs, les sites webs…</li>
-                                    <li>11/03/2026 - WorldView : outil permettant de visualiser, en 4D, l'opération militaire Epic Fury.</li>
-                                </ul>
+                        <p class="veille-chapo">Mise en avant des outils récents ou moins connus utilisés pour l'administration, la supervision ou la sécurité, avec une attention particulière aux projets open‑source.</p>
+
+                        <div class="veille-cards">
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">11/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Outils de désactivation Copilot</p>
+                                    <p class="veille-card-desc">Apparition de logiciels permettant de désactiver sélectivement les modules IA non souhaités dans Windows, répondant à des préoccupations de confidentialité et de performance.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Sources</h4>
-                                <ul class="veille-list">
-                                    <li>X : GitHub Projects Community et comptes présentant des projets open‑source.</li>
-                                    <li>Google Alertes</li>
-                                </ul>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">23/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Waze comme outil de surveillance de masse</p>
+                                    <p class="veille-card-desc">Un chercheur australien démontre comment croiser les données publiques de Waze permet de lier des noms d'utilisateurs à leur véritable identité — risque de surveillance passive via des apps grand public.</p>
+                                </div>
                             </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">24/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">W Social</p>
+                                    <p class="veille-card-desc">Lancement d'une alternative européenne à X, axée sur la protection des données et hébergée en Europe, dans un contexte de défiance croissante envers les plateformes américaines.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">02/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">BruteForceAI</p>
+                                    <p class="veille-card-desc">Outil offensif couplant IA et navigateur automatisé pour détecter des pages de connexion, simuler un comportement humain lors d'attaques par force brute et remonter les résultats via Discord/Slack/Teams.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">25/02/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Multidrive</p>
+                                    <p class="veille-card-desc">Outil Windows gratuit de clonage disque-à-disque, sauvegarde et effacement sécurisé. Mode CLI pour automatiser les opérations via script — utile pour la gestion de parc et les fins de vie d'équipements.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">02/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">GrapheneOS × Motorola</p>
+                                    <p class="veille-card-desc">Partenariat inédit : Motorola livrera des smartphones équipés nativement de GrapheneOS, OS axé sur la vie privée et la dé-googlisation, jusqu'ici réservé aux Pixel.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">VirtualBrowser (Oodrive)</p>
+                                    <p class="veille-card-desc">Navigateur s'exécutant dans un conteneur sécurisé et jetable : zéro empreinte locale, flux vidéo isolé, conteneur détruit à la fermeture. Isole totalement la navigation du système hôte.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">09/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">SargeBot</p>
+                                    <p class="veille-card-desc">Agent IA spécialisé en OSINT : explore automatiquement bases de données, APIs et sites web pour agréger des renseignements en source ouverte.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">11/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">WorldView</p>
+                                    <p class="veille-card-desc">Outil de visualisation géospatiale en 4D permettant de rejouer des opérations militaires. Illustre la convergence entre outils d'analyse géopolitique et technologies civiles.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">13/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">OpenClaw (scénario)</p>
+                                    <p class="veille-card-desc">Publication d'un scénario théorique montrant comment une skill d'agent IA pourrait infiltrer un SI, exfiltrer des données et déployer un ransomware. Alerte sur les risques des agents autonomes.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">~03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Outil QR code ZATAZ</p>
+                                    <p class="veille-card-desc">Outil local pour décoder un QR code sans l'envoyer à un service tiers, vérifier URL, texte, Wi-Fi ou contact avant tout scan. Utile contre le quishing (phishing par QR code).</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">15/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Modèle IA d'OpenAI orienté failles</p>
+                                    <p class="veille-card-desc">OpenAI annonce un modèle spécialisé dans la découverte de vulnérabilités et la rétro-ingénierie. Soulève des débats sur la double utilisation (défensif vs offensif) de ces outils.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">04/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Faille critique cPanel/WHM</p>
+                                    <p class="veille-card-desc">Vulnérabilité activement exploitée dans les panneaux de contrôle cPanel et WHM, utilisés par la majorité des hébergeurs web. Plus d'un million de sites potentiellement à risque.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Moltbot</p>
+                                    <p class="veille-card-desc">Agent IA populaire auprès des développeurs, dont l'engouement inquiète la communauté cybersécurité : questions sur les données traitées, les permissions accordées et la surface d'attaque introduite dans les SI.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Outil SUSE – conformité cloud souverain</p>
+                                    <p class="veille-card-desc">SUSE lance un outil en ligne pour évaluer la conformité d'une infrastructure au cadre européen de souveraineté cloud, dans le contexte des exigences NIS2 et du CRA.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">LangChain – faille CVE-2026-34070</p>
+                                    <p class="veille-card-desc">3ᵉ vulnérabilité critique en quelques mois sur ce framework IA (path traversal, CVSS 7,5). Un attaquant peut lire des fichiers arbitraires sur le système hôte, exposant configurations et identifiants.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Faille extension Claude dans Chrome</p>
+                                    <p class="veille-card-desc">Chercheurs alertent sur une vulnérabilité permettant à un site malveillant de détourner l'assistant IA et d'exécuter des actions non autorisées dans le navigateur.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Recall (Windows) toujours vulnérable</p>
+                                    <p class="veille-card-desc">Malgré une refonte de sécurité majeure, la fonction Recall reste contournable pour une extraction complète des captures d'écran enregistrées — surface d'attaque persistante.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">EnterpriseClaw (Automation Anywhere)</p>
+                                    <p class="veille-card-desc">Nouvel outil pour encadrer le déploiement d'agents IA en entreprise sans exposer les systèmes sensibles à des comportements incontrôlés. Répond aux inquiétudes sur la prolifération des agents autonomes dans les SI.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="veille-sources">
+                            <h4>Sources</h4>
+                            <ul class="veille-sources-list">
+                                <li>X : GitHub Projects Community</li>
+                                <li>ZATAZ.com</li>
+                                <li>Le Monde Informatique</li>
+                                <li>Google Alertes</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
- 
-            <!-- Accordéon 3 : Marché matériel -->
+
+            <!-- Accordéon 3 : Marché -->
             <div class="veille-accordion" id="acc-marche">
                 <button class="veille-accordion-toggle" aria-expanded="false" aria-controls="body-marche">
                     <div class="veille-icon">🎀</div>
@@ -256,41 +638,176 @@
                 </button>
                 <div class="veille-accordion-body" id="body-marche" role="region">
                     <div class="veille-accordion-inner">
-                        <p class="veille-chapo">
-                            Suivi des décisions stratégiques des fabricants, les nouvelles réglementations mises en place.
-                        </p>
-                        <div class="veille-columns">
-                            <div>
-                                <h4>Sujets suivis</h4>
-                                <ul class="veille-list">
-                                    <li>– Retrait de Micron du marché de la RAM pour les particuliers au profit des centres IA, hausse des prix constatée.</li>
-                                    <li>– Retrait d'un acteur du marché des GPU, tension sur l'offre et augmentation des coûts.</li>
-                                    <li>01/2026 - L'ANSSI publie ses recommandations pour protéger nos smartphones.</li>
-                                    <li>29/01/2026 - La CNIL inflige 5 millions d'euros d'amende à France Travail suite à une fuite de données (manquements en terme de sécurité : authentification, journaux et gestion de privilèges).</li>
-                                    <li>09/02/2026 - Discord adopte la vérification de l'âge.</li>
-                                    <li>27/02/2026 - iPhone et iPad officiellement homologués "NATO restricted" : une première historique pour des appareils grand public.</li>
-                                    <li>11/03/2026 - Raccourcissement de la durée de vie maximale des certificats SSL/TLS. Objectif : 47 jours max en mars 2029, pour réduire la fenêtre d'exposition en cas de compromission.</li>
-                                </ul>
+                        <p class="veille-chapo">Suivi des décisions stratégiques des fabricants et des nouvelles réglementations mises en place.</p>
+
+                        <div class="veille-cards">
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">–</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Retrait de Micron du marché RAM grand public</p>
+                                    <p class="veille-card-desc">Micron réoriente sa production vers les centres de données IA, créant une tension sur l'offre de RAM pour les particuliers et entraînant une hausse des prix.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4>Sources</h4>
-                                <ul class="veille-list">
-                                    <li>Google Alertes</li>
-                                    <li>LinkedIn</li>
-                                    <li>X (anciennement Twitter)</li>
-                                </ul>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">–</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Tension sur le marché des GPU</p>
+                                    <p class="veille-card-desc">Le retrait d'un acteur majeur du segment grand public crée des déséquilibres d'offre et pousse les prix à la hausse pour les cartes graphiques.</p>
+                                </div>
                             </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Recommandations ANSSI pour smartphones</p>
+                                    <p class="veille-card-desc">L'ANSSI publie un guide de bonnes pratiques : verrouillage, mises à jour, applications, VPN et gestion des permissions, à destination des professionnels comme des particuliers.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">13/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Directive NIS2 en vigueur</p>
+                                    <p class="veille-card-desc">NIS2 pleinement applicable en France : 18 secteurs couverts, plus de 15 000 entités concernées, responsabilité des dirigeants engagée. La loi Résilience est attendue pour l'été 2026.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">20/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Amendement NIS2 proposé par la Commission</p>
+                                    <p class="veille-card-desc">Simplification de la conformité NIS2 pour 28 700 entreprises (dont 6 200 PME), clarification des règles juridictionnelles et nouvelle catégorie pour les petites entreprises de taille intermédiaire.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">29/01/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Amende CNIL contre France Travail</p>
+                                    <p class="veille-card-desc">5 millions d'euros d'amende sanctionnant des manquements graves en matière d'authentification, de journalisation et de gestion des privilèges à la suite d'une fuite de données massive.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">09/02/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Discord adopte la vérification de l'âge</p>
+                                    <p class="veille-card-desc">La plateforme déploie un système obligatoire de vérification d'âge pour certains contenus, sous la pression des régulateurs européens et britanniques.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">27/02/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">iPhone et iPad homologués "NATO restricted"</p>
+                                    <p class="veille-card-desc">Première historique : Apple obtient l'homologation OTAN pour ses appareils grand public, ouvrant leur utilisation officielle dans des environnements gouvernementaux de niveau restreint.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">11/03/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Réduction de la durée des certificats SSL/TLS</p>
+                                    <p class="veille-card-desc">Objectif 47 jours maximum d'ici mars 2029, pour limiter la fenêtre d'exposition en cas de certificat compromis et forcer une rotation plus fréquente.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">08/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">L'État français migre vers Linux</p>
+                                    <p class="veille-card-desc">La DINUM annonce la sortie progressive de l'État de Windows au profit de Linux. 80 000 agents de l'Assurance maladie migrent vers des outils souverains dans le cadre d'un plan sur 7 axes technologiques.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">14/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">AI Act : calendrier revu</p>
+                                    <p class="veille-card-desc">Le Parlement européen repousse certaines échéances pour les systèmes IA à haut risque. Les règles les plus contraignantes ne s'appliqueront qu'à partir de décembre 2027, voire août 2028.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">17/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Cloud souverain européen : 180 M€</p>
+                                    <p class="veille-card-desc">La Commission européenne attribue 180 millions d'euros sur six ans à quatre fournisseurs cloud européens (OVHcloud, Scaleway, StackIT, S3NS…) pour héberger les données des institutions de l'UE.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">13/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Patch Tuesday de mai 2026</p>
+                                    <p class="veille-card-desc">Microsoft corrige 137 failles dont ~30 critiques. Premier Patch Tuesday depuis presque deux ans sans faille zero-day. Points chauds : client DNS Windows (CVE-2026-41096, CVSS 9,8), Word/Excel, Dynamics 365 (CVE-2026-42898, CVSS 9,9).</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Cisco supprime ~5 % de ses effectifs</p>
+                                    <p class="veille-card-desc">Malgré un CA record de 16 Md$ au Q3 2026, Cisco restructure ses effectifs mondiaux, illustrant la réorganisation des grands acteurs tech autour de l'IA et de l'automatisation.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date future">11/06/2026 ↗</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Cyber Resilience Act – 1ʳᵉ échéance</p>
+                                    <p class="veille-card-desc">Application des dispositions sur la notification des organismes d'évaluation de conformité pour les produits connectés. Les fabricants doivent commencer leur mise en conformité.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date future">07/06/2026 ↗</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Directive transparence des rémunérations</p>
+                                    <p class="veille-card-desc">Toutes les entreprises en France devront publier des fourchettes de salaires dans leurs offres d'emploi et garantir le droit à l'information des salariés sur les niveaux de rémunération à poste équivalent.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date future">01/09/2026 ↗</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Facturation électronique obligatoire</p>
+                                    <p class="veille-card-desc">Toutes les entreprises françaises devront être capables de recevoir des factures électroniques. La plateforme publique Chorus Pro sera au cœur du dispositif.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date future">11/09/2026 ↗</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CRA – obligation de signalement des failles</p>
+                                    <p class="veille-card-desc">Deuxième échéance du Cyber Resilience Act : les fabricants de produits connectés devront signaler activement toutes les vulnérabilités exploitées et tout incident de sécurité.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="veille-sources">
+                            <h4>Sources</h4>
+                            <ul class="veille-sources-list">
+                                <li>Google Alertes</li>
+                                <li>LinkedIn</li>
+                                <li>X (anciennement Twitter)</li>
+                                <li>Le Monde Informatique</li>
+                                <li>Clubic · IT-Connect</li>
+                                <li>Commission européenne (europa.eu)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
- 
+
         </section>
     </main>
- 
-    <!-- Fleurs animées -->
+
     <div class="petals"></div>
- 
+
     <footer>
         <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
         <div class="footer-legal">
@@ -298,38 +815,25 @@
             <a href="politique-confidentialite.html">Politique de confidentialité</a>
         </div>
     </footer>
- 
+
     <script>
-    // Pétales
     const container = document.querySelector('.petals');
-    const petalCount = 50;
-    for (let i = 0; i < petalCount; i++) {
+    for (let i = 0; i < 50; i++) {
         const petal = document.createElement('div');
         petal.classList.add('petal');
         petal.style.left = Math.random() * 100 + 'vw';
         const size = 8 + Math.random() * 14;
         petal.style.width = size + 'px';
         petal.style.height = size * 1.4 + 'px';
-        const duration = 5 + Math.random() * 6;
-        petal.style.animationDuration = duration + 's';
+        petal.style.animationDuration = (5 + Math.random() * 6) + 's';
         petal.style.animationDelay = Math.random() * 5 + 's';
         container.appendChild(petal);
     }
- 
-    // Accordéons
+
     document.querySelectorAll('.veille-accordion-toggle').forEach(toggle => {
         toggle.addEventListener('click', () => {
             const accordion = toggle.closest('.veille-accordion');
             const isOpen = accordion.classList.contains('open');
- 
-            // Fermer tous les autres (comportement exclusif, optionnel)
-            // document.querySelectorAll('.veille-accordion.open').forEach(a => {
-            //     a.classList.remove('open');
-            //     a.querySelector('.veille-accordion-toggle').setAttribute('aria-expanded', 'false');
-            //     const b = a.querySelector('.veille-status-badge');
-            //     if (b) b.textContent = 'Fermé';
-            // });
- 
             accordion.classList.toggle('open', !isOpen);
             toggle.setAttribute('aria-expanded', String(!isOpen));
         });
