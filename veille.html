@@ -292,16 +292,16 @@
                             <div class="veille-card">
                                 <span class="veille-card-date">19/01/2026</span>
                                 <div class="veille-card-content">
-                                    <p class="veille-card-title">URSSAF</p>
-                                    <p class="veille-card-desc">Compromission d'un compte prestataire ayant permis un accès non autorisé à l'API, potentiellement 12 millions de salariés concernés.</p>
+                                    <p class="veille-card-title">URSSAF – API DPAE</p>
+                                    <p class="veille-card-desc">Accès non autorisé à l'API de déclaration préalable à l'embauche (DPAE) via la compromission du compte d'un prestataire. 12 millions de salariés concernés : noms, dates de naissance, SIRET employeur et date d'embauche exfiltrés. Aucun numéro de sécurité sociale ni données bancaires exposés. L'URSSAF a déployé le MFA et la norme BIMI pour renforcer la sécurité et aider les usagers à distinguer ses communications des tentatives de phishing.</p>
                                 </div>
                             </div>
 
                             <div class="veille-card">
                                 <span class="veille-card-date">27/01/2026</span>
                                 <div class="veille-card-content">
-                                    <p class="veille-card-title">CNAM</p>
-                                    <p class="veille-card-desc">Fuite de données personnelles d'assurés sociaux, dont les informations d'identité et de remboursements.</p>
+                                    <p class="veille-card-title">CNAM – mise en vente par "HawkSec"</p>
+                                    <p class="veille-card-desc">L'acteur criminel HawkSec met en vente sur BreachForums une base de données présentée comme issue du Conservatoire national des arts et métiers (CNAM), contenant des données personnelles d'employés. Un échantillon a été publié. HawkSec dispose d'une mauvaise réputation sur le forum, mais la revendication s'inscrit dans une vague de compromissions visant des entités étatiques françaises (GAE, HubEE).</p>
                                 </div>
                             </div>
 
@@ -422,6 +422,14 @@
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">Rapport InterCERT France 2026</p>
                                     <p class="veille-card-desc">Les comptes compromis sont désormais le principal vecteur d'entrée dans les systèmes français. Les méthodes restent souvent basiques (credential stuffing, phishing) mais efficaces faute de MFA et de gestion des accès.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">18/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">DDoS contre des organisations françaises – NoName057(16)</p>
+                                    <p class="veille-card-desc">Le groupe hacktiviste prorusse NoName057(16) revendique plusieurs attaques DDoS en cours visant des organisations françaises, en réponse aux déclarations de Zelensky sur la coopération franco-ukrainienne en défense antimissile. Le groupe affirme également avoir obtenu un accès à distance à une usine française de biogaz et menace d'en interrompre le fonctionnement.</p>
                                 </div>
                             </div>
 
@@ -611,6 +619,94 @@
                                 </div>
                             </div>
 
+                            <div class="veille-card">
+                                <span class="veille-card-date">01/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Fuite Claude Code utilisée comme leurre (Vidar infostealer)</p>
+                                    <p class="veille-card-desc">Zscaler ThreatLabz révèle l'exploitation d'une fuite du code source de Claude Code (agent IA terminal d'Anthropic) pour diffuser l'infostealer Vidar v18.7 via de faux dépôts GitHub. Un package npm officiel mal packagé embarquait 513 000 lignes de TypeScript, massivement clonées. Des dépôts frauduleux « leaked-claude-code » référencés en tête de Google servent de vecteur : l'archive téléchargée déploie un dropper, Vidar et le proxy GhostSocks, permettant vol de mots de passe et cookies. Risque supply chain documenté : backdoors dans des forks populaires, hooks malveillants ou dépendances npm piégées.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">02/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Vulnérabilité Claude Code – contournement des règles deny (Adversa AI)</p>
+                                    <p class="veille-card-desc">Au-delà de 50 sous-commandes chaînées dans un pipeline shell, le moteur de permissions de Claude Code cesse d'appliquer les règles deny. Un dépôt malveillant avec un fichier CLAUDE.md piégé pousse l'agent à générer un pipeline de 50+ étapes légitimes en apparence, au sein duquel le payload d'exfiltration s'exécute en position 51+. Cette limite résulte d'un compromis performance/sécurité documenté par Anthropic : un parseur plus robuste existe dans le code mais n'est pas activé dans les builds publics.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2026-9082 – Prise de contrôle via Drupal</p>
+                                    <p class="veille-card-desc">Un exploit public cible l'endpoint /jsonapi de Drupal : injection SQL via une clé de tableau malveillante dans les filtres PostgreSQL, permettant une extraction aveugle de données et la récupération du compte administrateur (uid=1). Correctifs disponibles : Drupal 11.3.10, 11.2.12, 11.1.10, 10.6.9, 10.5.10, 10.4.10.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2026-20182 – Contournement d'auth Cisco SD-WAN</p>
+                                    <p class="veille-card-desc">Exploit public permettant de contourner l'authentification du plan de contrôle via DTLS/UDP 12346 en se présentant comme un équipement vHub. L'attaquant peut injecter une clé SSH dans authorized_keys de vmanage-admin et obtenir un accès persistant via NETCONF/SSH (port 830). Correctifs : Cisco Catalyst SD-WAN 20.9.9.1, 20.12.5.4, 20.15.5.2, 26.1.1.1 et autres branches.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">MiniPlasma – Élévation de privilèges Windows (0-day)</p>
+                                    <p class="veille-card-desc">Exploit non référencé ciblant le pilote noyau Windows Cloud Files Mini Filter (cldflt.sys), lié à la CVE-2020-17103 supposément corrigée en 2020. Un utilisateur local standard peut obtenir des privilèges SYSTEM. Aucun correctif disponible à ce jour.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2026-31635 – Élévation de privilèges noyau Linux</p>
+                                    <p class="veille-card-desc">Exploit public ciblant le sous-système RxRPC/RxGK du noyau Linux : un utilisateur local peut obtenir les droits root. Correctifs disponibles via les commits a2567217ade9, beee051f259a et e2f1a80d8b1e selon la branche utilisée.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">19/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2024-12802 – SonicWall VPN SSL exploité activement</p>
+                                    <p class="veille-card-desc">ReliaQuest révèle l'exploitation entre février et mars 2026 d'une faille SonicWall (corrigée en janvier 2025) permettant de contourner le MFA pour les connexions au format UPN. Des environnements pourtant patchés ont été ciblés faute d'application complète des mesures de remédiation. Campagne attribuée à un groupe de ransomware.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">23/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2026-32202 – Zero-click Windows Shell exploité par APT28</p>
+                                    <p class="veille-card-desc">Akamai signale l'exploitation par le groupe russe APT28 d'une vulnérabilité zero-click dans Windows Shell, résultant d'un correctif incomplet de la CVE-2026-21510. Sans interaction utilisateur, un attaquant peut usurper l'identité d'un utilisateur réseau et accéder à des informations sensibles.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">21/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2026-26980 – Ghost CMS exploité à grande échelle</p>
+                                    <p class="veille-card-desc">XLab révèle l'exploitation massive d'une faille Ghost CMS (corrigée en février 2026) permettant l'accès non authentifié aux clés API d'administration. Plus de 700 domaines touchés (universités, blockchain, IA/SaaS, médias…). Les attaquants déploient des campagnes ClickFix pour maintenir une persistance sur les systèmes compromis.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">19-20/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Compromission de GitHub et DurableTask par TeamPCP</p>
+                                    <p class="veille-card-desc">Le groupe TeamPCP compromet le package Python officiel Microsoft DurableTask (417 000 téléchargements/mois) et revendique l'exfiltration de 3 800 dépôts internes GitHub. Campagne liée au ver Mini Shai-Hulud ayant déjà ciblé des paquets npm. GitHub a confirmé l'incident.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">17/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Compromission de Grafana – code source volé</p>
+                                    <p class="veille-card-desc">Grafana Labs confirme le vol de son code source revendiqué par le groupe Coinbasecartel. Aucune donnée client compromise. Grafana refuse de payer la rançon et a identifié l'origine de la fuite d'identifiants.</p>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="veille-sources">
@@ -619,6 +715,9 @@
                                 <li>X : GitHub Projects Community</li>
                                 <li>ZATAZ.com</li>
                                 <li>Le Monde Informatique</li>
+                                <li>Zscaler ThreatLabz</li>
+                                <li>Adversa AI</li>
+                                <li>CERT-XMCO</li>
                                 <li>Google Alertes</li>
                             </ul>
                         </div>
