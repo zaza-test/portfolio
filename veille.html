@@ -6,10 +6,6 @@
     <title>Veille – Portfolio Aesa</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ========================
-           ACCORDÉON VEILLE
-        ========================== */
-
         .veille-accordion {
             border: 1px solid rgba(230,57,70,0.22);
             border-radius: 20px;
@@ -18,11 +14,7 @@
             box-shadow: 0 6px 24px rgba(230,57,70,0.09);
             transition: box-shadow 0.3s;
         }
-
-        .veille-accordion:hover {
-            box-shadow: 0 10px 35px rgba(230,57,70,0.18);
-        }
-
+        .veille-accordion:hover { box-shadow: 0 10px 35px rgba(230,57,70,0.18); }
         .veille-accordion-toggle {
             width: 100%;
             background: rgba(255,255,255,0.96);
@@ -35,22 +27,15 @@
             text-align: left;
             transition: background 0.25s;
         }
-
-        .veille-accordion-toggle:hover {
-            background: rgba(255,240,244,0.98);
-        }
-
+        .veille-accordion-toggle:hover { background: rgba(255,240,244,0.98); }
         .veille-accordion.open .veille-accordion-toggle {
             background: radial-gradient(circle at top left, rgba(255,240,244,0.97), rgba(255,255,255,0.97));
             border-bottom: 1px solid rgba(230,57,70,0.15);
         }
-
         .veille-accordion-toggle .veille-icon { flex-shrink: 0; }
-
         .veille-toggle-text { flex: 1; }
         .veille-toggle-text .veille-tag { display: block; margin: 0 0 0.15rem; }
         .veille-toggle-text h3 { margin: 0; font-size: 1.25rem; color: #d62839; }
-
         .veille-chevron {
             flex-shrink: 0;
             width: 28px; height: 28px;
@@ -61,44 +46,17 @@
             transition: transform 0.35s ease, background 0.25s;
             color: #e63946; font-size: 0.75rem;
         }
-
-        .veille-accordion.open .veille-chevron {
-            transform: rotate(180deg);
-            background: rgba(230,57,70,0.14);
-        }
-
+        .veille-accordion.open .veille-chevron { transform: rotate(180deg); background: rgba(230,57,70,0.14); }
         .veille-accordion-body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
             background: rgba(255,255,255,0.95);
         }
-
-        .veille-accordion.open .veille-accordion-body {
-            max-height: 6000px;
-        }
-
-        .veille-accordion-inner {
-            padding: 1.4rem 1.4rem 1.7rem;
-        }
-
-        .veille-accordion-inner .veille-chapo {
-            margin: 0 0 1.4rem;
-            font-size: 0.93rem;
-            color: #555;
-        }
-
-        /* ========================
-           CARTES ÉVÉNEMENTS
-        ========================== */
-
-        .veille-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-            margin-bottom: 1.5rem;
-        }
-
+        .veille-accordion.open .veille-accordion-body { max-height: 7000px; }
+        .veille-accordion-inner { padding: 1.4rem 1.4rem 1.7rem; }
+        .veille-accordion-inner .veille-chapo { margin: 0 0 1.4rem; font-size: 0.93rem; color: #555; }
+        .veille-cards { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.5rem; }
         .veille-card {
             display: flex;
             gap: 0.9rem;
@@ -109,13 +67,7 @@
             padding: 0.75rem 1rem;
             transition: background 0.2s, border-color 0.2s, transform 0.2s;
         }
-
-        .veille-card:hover {
-            background: rgba(255,246,248,0.98);
-            border-color: rgba(230,57,70,0.28);
-            transform: translateX(3px);
-        }
-
+        .veille-card:hover { background: rgba(255,246,248,0.98); border-color: rgba(230,57,70,0.28); transform: translateX(3px); }
         .veille-card-date {
             flex-shrink: 0;
             min-width: 80px;
@@ -131,35 +83,10 @@
             line-height: 1.3;
             margin-top: 0.1rem;
         }
-
-        .veille-card-date.future {
-            background: linear-gradient(135deg, #f0aa50, #d97706);
-        }
-
-        .veille-card-content {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .veille-card-title {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #c9184a;
-            margin: 0 0 0.2rem;
-            line-height: 1.35;
-        }
-
-        .veille-card-desc {
-            font-size: 0.8rem;
-            color: #555;
-            line-height: 1.55;
-            margin: 0;
-        }
-
-        /* ========================
-           STATS + SOURCES
-        ========================== */
-
+        .veille-card-date.future { background: linear-gradient(135deg, #f0aa50, #d97706); }
+        .veille-card-content { flex: 1; min-width: 0; }
+        .veille-card-title { font-size: 0.88rem; font-weight: 700; color: #c9184a; margin: 0 0 0.2rem; line-height: 1.35; }
+        .veille-card-desc { font-size: 0.8rem; color: #555; line-height: 1.55; margin: 0; }
         .veille-stats-bar {
             background: rgba(230,57,70,0.05);
             border: 1px solid rgba(230,57,70,0.15);
@@ -169,41 +96,11 @@
             color: #888;
             margin-bottom: 1.2rem;
         }
-
-        .veille-sources {
-            border-top: 1px solid rgba(230,57,70,0.1);
-            padding-top: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .veille-sources h4 {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #c9184a;
-            margin: 0 0 0.55rem;
-        }
-
-        .veille-sources-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            list-style: none;
-            padding: 0; margin: 0;
-        }
-
-        .veille-sources-list li {
-            font-size: 0.75rem;
-            color: #666;
-            background: rgba(230,57,70,0.06);
-            border: 1px solid rgba(230,57,70,0.15);
-            border-radius: 99px;
-            padding: 0.15rem 0.65rem;
-        }
-
-        @media screen and (max-width: 700px) {
-            .veille-card-date { min-width: 64px; font-size: 0.62rem; }
-        }
+        .veille-sources { border-top: 1px solid rgba(230,57,70,0.1); padding-top: 1rem; margin-top: 0.5rem; }
+        .veille-sources h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: #c9184a; margin: 0 0 0.55rem; }
+        .veille-sources-list { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0; }
+        .veille-sources-list li { font-size: 0.75rem; color: #666; background: rgba(230,57,70,0.06); border: 1px solid rgba(230,57,70,0.15); border-radius: 99px; padding: 0.15rem 0.65rem; }
+        @media screen and (max-width: 700px) { .veille-card-date { min-width: 64px; font-size: 0.62rem; } }
     </style>
 </head>
 <body>
@@ -223,6 +120,7 @@
                 <a href="outro.html">Outro</a>
             </nav>
         </div>
+        <script defer src="/_vercel/insights/script.js"></script>
     </header>
 
     <main>
@@ -239,13 +137,13 @@
                     <div class="veille-icon">🎀</div>
                     <div class="veille-toggle-text">
                         <p class="veille-tag">Dossier cybersécurité</p>
-                        <h3>Cyberattaques ciblant la France</h3>
+                        <h3>Cyberattaques et vulnérabilités critiques</h3>
                     </div>
                     <div class="veille-chevron">▼</div>
                 </button>
                 <div class="veille-accordion-body" id="body-cyber" role="region">
                     <div class="veille-accordion-inner">
-                        <p class="veille-chapo">Suivi des attaques visant des entreprises, institutions et collectivités françaises afin d'identifier les vecteurs d'intrusion, les vulnérabilités exploitées et les réponses mises en place.</p>
+                        <p class="veille-chapo">Suivi des attaques visant des entreprises, institutions et collectivités françaises afin d'identifier les vecteurs d'intrusion, ainsi que l'analyse des vulnérabilités critiques du secteur.</p>
 
                         <div class="veille-cards">
 
@@ -410,10 +308,26 @@
                             </div>
 
                             <div class="veille-card">
-                                <span class="veille-card-date">14/05/2026</span>
+                                <span class="veille-card-date">05/05/2026</span>
                                 <div class="veille-card-content">
-                                    <p class="veille-card-title">Groupe Pierre &amp; Vacances</p>
-                                    <p class="veille-card-desc">Cyberattaque ayant entraîné la fuite de 1,6 million de dossiers de réservations clients, incluant des informations personnelles et de séjour.</p>
+                                    <p class="veille-card-title">Apache HTTP Server – Faille critique RCE (CVE-2026-23918)</p>
+                                    <p class="veille-card-desc">L'Apache Software Foundation publie un correctif d'urgence pour la version 2.4.67 afin de colmater 5 failles, dont la plus sévère est notée 8.8 (CVSS). Il s'agit d'un bug de corruption mémoire "double-free" au sein de l'implémentation du protocole HTTP/2 qui permet une exécution de code à distance (RCE).</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">06/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Microsoft Edge – Extraction locale de tous les identifiants</p>
+                                    <p class="veille-card-desc">Révélation d'une méthode simpliste permettant à un utilisateur local standard (ou un malware exécuté dans sa session) de récupérer l'ensemble des identifiants stockés dans Edge en réalisant un simple vidage mémoire (Memory Dump) du processus du navigateur via le Gestionnaire des tâches, sans privilèges supplémentaires. Microsoft qualifie ce comportement d'"attendu".</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">08/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Linux – Zero-Day d'élévation de privilèges "Dirty Frag"</p>
+                                    <p class="veille-card-desc">Découverte par le chercheur Hyunwoo Kim d'un exploit en chaîne ("Dirty Frag") liant deux bugs de noyau (CVE-2026-43284 déjà corrigée, et CVE-2026-43500 non corrigée). Cette faille hautement stable permet à n'importe quel utilisateur local de passer Root instantanément sur la majorité des distributions majeures (Ubuntu 24.04.4, RHEL 10.1, Fedora 44, etc.). Le code de l'exploit a été divulgué publiquement sur GitHub.</p>
                                 </div>
                             </div>
 
@@ -426,6 +340,22 @@
                             </div>
 
                             <div class="veille-card">
+                                <span class="veille-card-date">12/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Windows 11 BitLocker – Attaque par rétrogradation "BitUnlocker"</p>
+                                    <p class="veille-card-desc">Mise en évidence de l'outil offensif "BitUnlocker" exploitant la faille CVE-2025-48804. Il permet à un attaquant ayant un accès physique à une machine Windows 11 de contourner le chiffrement BitLocker en moins de 5 minutes via une attaque de "downgrade" exploitant un écart entre l'application du correctif et la révocation des certificats UEFI.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">14/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Groupe Pierre &amp; Vacances</p>
+                                    <p class="veille-card-desc">Cyberattaque ayant entraîné la fuite de 1,6 million de dossiers de réservations clients, incluant des informations personnelles et de séjour.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
                                 <span class="veille-card-date">18/05/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">DDoS contre des organisations françaises – NoName057(16)</p>
@@ -433,18 +363,107 @@
                                 </div>
                             </div>
 
+                            <div class="veille-card">
+                                <span class="veille-card-date">22/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Bilan CNIL – Explosion des violations de données en France</p>
+                                    <p class="veille-card-desc">Publication de statistiques alarmantes par la CNIL recensant 6 167 fuites de données révélées sur l'année écoulée, soit une moyenne de 24 fuites par jour (une par heure). Les analyses indiquent par ailleurs que près de 9 Français sur 10 ont vu leurs données personnelles piratées et mises en circulation sur le dark web.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">25/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Windows Themes – Faille Zero-Day d'exécution de code</p>
+                                    <p class="veille-card-desc">Découverte d'une vulnérabilité critique activement exploitée dans le gestionnaire de thèmes de Windows. L'ouverture ou la simple prévisualisation d'un fichier de thème malveillant personnalisé (.theme) permet à un attaquant distant d'exécuter du code arbitraire à l'aide de requêtes de partage réseau SMB masquées, sans interaction complexe requise de la part de l'utilisateur.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">28/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Claude Opus 4.8 – Jailbreak autonome en 7 minutes après son lancement</p>
+                                    <p class="veille-card-desc">Le chercheur en sécurité "Pliny the Liberator" démontre les faiblesses persistantes des barrières de sécurité de l'IA. À peine 7 minutes après la sortie officielle de Claude Opus 4.8 par Anthropic, le modèle a été entièrement compromis (Jailbreak). Via des injections indirectes ("deep pre-filling"), l'attaquant a pu forcer le modèle de manière totalement autonome à générer du contenu hautement sensitive : guides de crochetage de serrures, simulations d'attaques par vishing (phishing vocal), guides de blanchiment d'argent, techniques d'ingénierie sociale et scripts de phishing.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">30/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">VMware ESXi – Faille critique d'exécution de code sur l'hyperviseur</p>
+                                    <p class="veille-card-desc">Broadcom publie un bulletin d'alerte critique concernant les hyperviseurs VMware ESXi et produits Workstation. Une vulnérabilité de corruption mémoire dans l'émulation de périphérique USB permet à un attaquant disposant de privilèges d'administration sur une machine virtuelle de s'échapper de la VM (sandbox escape) et d'exécuter du code malveillant directement sur le système hôte ESXi.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">02/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Malware WhatsApp – Contournement du chiffrement de bout en bout</p>
+                                    <p class="veille-card-desc">Identification d'une nouvelle souche de cheval de Troie Android ciblant spécifiquement l'application de messagerie WhatsApp. Plutôt que de briser le chiffrement de bout en bout (techniquement inviolable), le logiciel malveillant s'octroie des permissions via les services d'accessibilité pour intercepter et lire les messages directement sur l'écran de la victime avant leur chiffrement ou après leur décodage.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Analyse Microsoft – Escalade de privilèges locaux (LPE)</p>
+                                    <p class="veille-card-desc">L'équipe de recherche en sécurité de Microsoft publie un rapport technique complet détaillant la recrudescence des failles d'élévation de privilèges locaux (LPE) au sein des systèmes d'exploitation modernes. L'éditeur insiste sur la nécessité absolue de cloisonner les processus et d'appliquer le principe du moindre privilège pour neutraliser les attaques en chaîne.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">07/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Tchap – messagerie chiffrée de l'État compromise</p>
+                                    <p class="veille-card-desc">L'ANSSI détecte le 7 juin une usurpation de compte sur Tchap, la messagerie imposée à l'ensemble de l'administration française depuis septembre 2025. Le cybercriminel "Misère" revendique sur un forum l'exfiltration de 643 459 messages échangés par 73 467 agents publics au sein de 976 salons, couvrant près de 3 ans d'échanges (juin 2023 – juin 2026), dont 90 documents marqués « Diffusion restreinte ». Point d'entrée : un compte de l'Éducation nationale sans MFA, ayant permis d'accéder aux salons publics de plusieurs ministères (Intérieur, Armées, Justice, Finances, Affaires étrangères). Les conversations privées chiffrées de bout en bout ne sont pas concernées. Incident notifié à la CNIL ; rappel émis aux agents sur les risques des salons publics non chiffrés.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">08/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Leboncoin Immobilier – 4 M d'annonces et ~1 M de numéros publiés</p>
+                                    <p class="veille-card-desc">Le hacker ChimeraZ revendique la publication d'une base de données attribuée à Leboncoin Immobilier, regroupant 4 millions d'annonces et près d'un million de numéros de téléphone d'utilisateurs. La fuite illustre la valeur des données de contact dans l'immobilier pour des campagnes de phishing et de démarchage frauduleux.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">09/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Nantes Métropole – coordonnées de 5 200 agents en fuite</p>
+                                    <p class="veille-card-desc">Une base de données contenant les informations professionnelles (noms, emails, postes) de plus de 5 200 agents de Nantes Métropole est publiée en ligne. Nouvelle illustration du ciblage des collectivités territoriales, souvent moins bien dotées en ressources cybersécurité que les grandes administrations centrales.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">09/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Au Vieux Campeur – cyberattaque en cours d'investigation</p>
+                                    <p class="veille-card-desc">L'enseigne spécialisée en équipements outdoor confirme avoir été victime d'une cyberattaque. Une enquête est en cours pour en déterminer l'étendue. L'incident s'inscrit dans une vague touchant le secteur du commerce en ligne français.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">09/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Préoccupations cybersécurité autour de Claude Fable 5</p>
+                                    <p class="veille-card-desc">Dès le lancement de Claude Fable 5, des chercheurs alertent sur ses capacités offensives en détection de vulnérabilités. Malgré les garde-fous d'Anthropic (renvoi vers Opus 4.8 pour les requêtes sensibles), le modèle se révèle nettement plus efficace que ses prédécesseurs pour découvrir des failles critiques — soulignant le risque de double usage pour la DeFi, les infrastructures critiques et les SI d'entreprise.</p>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="veille-stats-bar">📊 Chiffres clés 2026 : +87 % de cyberattaques vs 2025 · 2ᵉ pays mondial le plus touché par les fuites de données au T1 · Plus de 320 collectivités françaises victimes depuis janvier 2026 (RM3A).</div>
+                        <div class="veille-stats-bar">📊 Chiffres clés 2026 : +87 % de cyberattaques vs 2025 · Plus de 6 100 fuites annuelles de données en France · Plus de 320 collectivités françaises victimes depuis janvier 2026 (RM3A).</div>
 
                         <div class="veille-sources">
                             <h4>Sources</h4>
                             <ul class="veille-sources-list">
                                 <li>LinkedIn : Florian Burnel, Mathilde de Roumilly, Gabriel Minchola…</li>
-                                <li>X : SaxX, Malwarebytes, Christophe Boutry…</li>
+                                <li>X : SaxX (@_SaxX_), Pliny the Liberator, Cyber Security News, International Cyber Digest</li>
                                 <li>ZATAZ.com</li>
                                 <li>XMCO · i-leadconsulting · FrenchBreaches</li>
                                 <li>Google Alertes</li>
+                                <li>SANS Internet Storm Center (isc.sans.edu)</li>
                             </ul>
                         </div>
                     </div>
@@ -457,13 +476,13 @@
                     <div class="veille-icon">🎀</div>
                     <div class="veille-toggle-text">
                         <p class="veille-tag">Dossier logiciels</p>
-                        <h3>Nouveaux logiciels et outils</h3>
+                        <h3>Nouveaux logiciels</h3>
                     </div>
                     <div class="veille-chevron">▼</div>
                 </button>
                 <div class="veille-accordion-body" id="body-logiciels" role="region">
                     <div class="veille-accordion-inner">
-                        <p class="veille-chapo">Mise en avant des outils récents ou moins connus utilisés pour l'administration, la supervision ou la sécurité, avec une attention particulière aux projets open‑source.</p>
+                        <p class="veille-chapo">Mise en avant des outils récents ou moins connus utilisés pour l'administration, ainsi que l'analyse critique des compromissions de chaînes logistiques logicielles officielles.</p>
 
                         <div class="veille-cards">
 
@@ -488,6 +507,14 @@
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">W Social</p>
                                     <p class="veille-card-desc">Lancement d'une alternative européenne à X, axée sur la protection des données et hébergée en Europe, dans un contexte de défiance croissante envers les plateformes américaines.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">02/02/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Discord – Campagnes massives de vol de jetons d'authentification (Tokens)</p>
+                                    <p class="veille-card-desc">Multiplication de scripts malveillants ciblant les développeurs et utilisateurs de Discord. Dissimulés dans de faux outils ou des packages contrefaits, ces malwares exfiltrent les jetons de session (tokens), permettant aux attaquants de contourner le MFA et de prendre le contrôle total des serveurs communautaires.</p>
                                 </div>
                             </div>
 
@@ -556,6 +583,30 @@
                             </div>
 
                             <div class="veille-card">
+                                <span class="veille-card-date">01/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Fuite Claude Code utilisée comme leurre (Vidar infostealer)</p>
+                                    <p class="veille-card-desc">Zscaler ThreatLabz révèle l'exploitation d'une fuite du code source de Claude Code (agent IA terminal d'Anthropic) pour diffuser l'infostealer Vidar v18.7 via de faux dépôts GitHub. Un package npm officiel mal packagé embarquait 513 000 lignes de TypeScript, massivement clonées. Des dépôts frauduleux « leaked-claude-code » référencés en tête de Google servent de vecteur : l'archive téléchargée déploie un dropper, Vidar et le proxy GhostSocks, permettant vol de mots de passe et cookies. Risque supply chain documenté : backdoors dans des forks populaires, hooks malveillants ou dépendances npm piégées.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">02/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Vulnérabilité Claude Code – contournement des règles deny (Adversa AI)</p>
+                                    <p class="veille-card-desc">Au-delà de 50 sous-commandes chaînées dans un pipeline shell, le moteur de permissions de Claude Code cesse d'appliquer les règles deny. Un dépôt malveillant avec un fichier CLAUDE.md piégé pousse l'agent à générer un pipeline de 50+ étapes légitimes en apparence, au sein duquel le payload d'exfiltration s'exécute en position 51+. Cette limite résulte d'un compromis performance/sécurité documenté par Anthropic : un parseur plus robuste existe dans le code mais n'est pas activé dans les builds publics.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">DAEMON Tools – Injection de Backdoors sur le site officiel</p>
+                                    <p class="veille-card-desc">Alerte majeure de sécurité sur la chaîne logistique : le site officiel du très populaire logiciel DAEMON Tools a distribué des installateurs corrompus embarquant une porte dérobée (backdoor). Des milliers d'infections ont déjà été confirmées dans plus de 100 pays, d'autant que les exécutables malveillants étaient signés par de véritables certificats de développeur valides.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
                                 <span class="veille-card-date">15/04/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">Modèle IA d'OpenAI orienté failles</p>
@@ -564,10 +615,34 @@
                             </div>
 
                             <div class="veille-card">
+                                <span class="veille-card-date">23/04/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">CVE-2026-32202 – Zero-click Windows Shell exploité par APT28</p>
+                                    <p class="veille-card-desc">Akamai signale l'exploitation par le groupe russe APT28 d'une vulnérabilité zero-click dans Windows Shell, résultant d'un correctif incomplet de la CVE-2026-21510. Sans interaction utilisateur, un attaquant peut usurper l'identité d'un utilisateur réseau et accéder à des informations sensibles.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
                                 <span class="veille-card-date">04/05/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">Faille critique cPanel/WHM</p>
                                     <p class="veille-card-desc">Vulnérabilité activement exploitée dans les panneaux de contrôle cPanel et WHM, utilisés par la majorité des hébergeurs web. Plus d'un million de sites potentiellement à risque.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">05/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Google Chrome – Installation forcée en arrière-plan d'un modèle IA de 4 Go</p>
+                                    <p class="veille-card-desc">Le portail spécialisé nixCraft relève que Google Chrome installe désormais en tâche de fond, de manière totalement silencieuse et sans le consentement explicite de l'utilisateur, un modèle d'IA local pesant 4 Go. Aucune interface de refus (Opt-out) n'est fournie, et l'outil se réinstalle automatiquement s'il est supprimé manuellement du système de fichiers.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">08/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">JDownloader – Site officiel piraté et exécutables modifiés</p>
+                                    <p class="veille-card-desc">Le gestionnaire de téléchargement aux millions d'utilisateurs a été victime d'une intrusion. En modifiant les listes de contrôle d'accès (ACL) du site web via une vulnérabilité non corrigée, les attaquants ont remplacé durant plus de 24 heures les installateurs Windows et Linux par des versions contenant un malware. L'alerte a été donnée par un utilisateur Reddit ayant repéré des signatures de certificats suspectes ("Zipline LLC", "The Water Team") à la place de l'éditeur "AppWork GmbH".</p>
                                 </div>
                             </div>
 
@@ -607,7 +682,7 @@
                                 <span class="veille-card-date">05/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">Recall (Windows) toujours vulnérable</p>
-                                    <p class="veille-card-desc">Malgré une refonte de sécurité majeure, la fonction Recall reste contournable pour une extraction complète des captures d'écran enregistrées — surface d'attaque persistante.</p>
+                                    <p class="veille-card-desc">Malgré une refonte de sécurité majeure, la fonction Recall reste contournable pour une extraction complète des captures d'écran enregistrées — surface d'attaque permanente.</p>
                                 </div>
                             </div>
 
@@ -616,22 +691,6 @@
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">EnterpriseClaw (Automation Anywhere)</p>
                                     <p class="veille-card-desc">Nouvel outil pour encadrer le déploiement d'agents IA en entreprise sans exposer les systèmes sensibles à des comportements incontrôlés. Répond aux inquiétudes sur la prolifération des agents autonomes dans les SI.</p>
-                                </div>
-                            </div>
-
-                            <div class="veille-card">
-                                <span class="veille-card-date">01/04/2026</span>
-                                <div class="veille-card-content">
-                                    <p class="veille-card-title">Fuite Claude Code utilisée comme leurre (Vidar infostealer)</p>
-                                    <p class="veille-card-desc">Zscaler ThreatLabz révèle l'exploitation d'une fuite du code source de Claude Code (agent IA terminal d'Anthropic) pour diffuser l'infostealer Vidar v18.7 via de faux dépôts GitHub. Un package npm officiel mal packagé embarquait 513 000 lignes de TypeScript, massivement clonées. Des dépôts frauduleux « leaked-claude-code » référencés en tête de Google servent de vecteur : l'archive téléchargée déploie un dropper, Vidar et le proxy GhostSocks, permettant vol de mots de passe et cookies. Risque supply chain documenté : backdoors dans des forks populaires, hooks malveillants ou dépendances npm piégées.</p>
-                                </div>
-                            </div>
-
-                            <div class="veille-card">
-                                <span class="veille-card-date">02/04/2026</span>
-                                <div class="veille-card-content">
-                                    <p class="veille-card-title">Vulnérabilité Claude Code – contournement des règles deny (Adversa AI)</p>
-                                    <p class="veille-card-desc">Au-delà de 50 sous-commandes chaînées dans un pipeline shell, le moteur de permissions de Claude Code cesse d'appliquer les règles deny. Un dépôt malveillant avec un fichier CLAUDE.md piégé pousse l'agent à générer un pipeline de 50+ étapes légitimes en apparence, au sein duquel le payload d'exfiltration s'exécute en position 51+. Cette limite résulte d'un compromis performance/sécurité documenté par Anthropic : un parseur plus robuste existe dans le code mais n'est pas activé dans les builds publics.</p>
                                 </div>
                             </div>
 
@@ -647,7 +706,7 @@
                                 <span class="veille-card-date">05/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">CVE-2026-20182 – Contournement d'auth Cisco SD-WAN</p>
-                                    <p class="veille-card-desc">Exploit public permettant de contourner l'authentification du plan de contrôle via DTLS/UDP 12346 en se présentant comme un équipement vHub. L'attaquant peut injecter une clé SSH dans authorized_keys de vmanage-admin et obtenir un accès persistant via NETCONF/SSH (port 830). Correctifs : Cisco Catalyst SD-WAN 20.9.9.1, 20.12.5.4, 20.15.5.2, 26.1.1.1 et autres branches.</p>
+                                    <p class="veille-card-desc">Exploit public permettant de contourner l'authentification du plan de contrôle via DTLS/UDP 12346 en se présentant comme un équipement vHub. L'attaquant peut injecter une clé SSH dans authorized_keys de vmanage-admin et obtenir un accès permanent via NETCONF/SSH (port 830). Correctifs : Cisco Catalyst SD-WAN 20.9.9.1, 20.12.5.4, 20.15.5.2, 26.1.1.1 et autres branches.</p>
                                 </div>
                             </div>
 
@@ -676,14 +735,6 @@
                             </div>
 
                             <div class="veille-card">
-                                <span class="veille-card-date">23/04/2026</span>
-                                <div class="veille-card-content">
-                                    <p class="veille-card-title">CVE-2026-32202 – Zero-click Windows Shell exploité par APT28</p>
-                                    <p class="veille-card-desc">Akamai signale l'exploitation par le groupe russe APT28 d'une vulnérabilité zero-click dans Windows Shell, résultant d'un correctif incomplet de la CVE-2026-21510. Sans interaction utilisateur, un attaquant peut usurper l'identité d'un utilisateur réseau et accéder à des informations sensibles.</p>
-                                </div>
-                            </div>
-
-                            <div class="veille-card">
                                 <span class="veille-card-date">21/05/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">CVE-2026-26980 – Ghost CMS exploité à grande échelle</p>
@@ -707,18 +758,26 @@
                                 </div>
                             </div>
 
+                            <div class="veille-card">
+                                <span class="veille-card-date">09/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Claude Fable 5 – lancement public (Anthropic)</p>
+                                    <p class="veille-card-desc">Anthropic lance Claude Fable 5, première version accessible au grand public d'un modèle de classe Mythos, auparavant réservé à ~150 organisations via le Project Glasswing. Le modèle excelle en ingénierie logicielle (80,3 % sur SWE-Bench Pro vs 69,2 % pour Opus 4.8), raisonnement long (tâches multi-jours autonomes) et vision. Des garde-fous redirigent automatiquement les requêtes sensibles (cybersécurité, biologie, chimie) vers Claude Opus 4.8. Disponible sur l'API (model id : claude-fable-5) à 10 $/50 $ le million de tokens. Inclus sans surcoût dans les plans Pro/Max/Team jusqu'au 22 juin, puis facturation à l'usage via crédits séparés. Polémique sur le coût très élevé (quota Max épuisé en 9 minutes) et les restrictions jugées trop larges bloquant même des questions légitimes de cybersécurité.</p>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="veille-sources">
                             <h4>Sources</h4>
                             <ul class="veille-sources-list">
-                                <li>X : GitHub Projects Community</li>
+                                <li>X : GitHub Projects Community, @nixcraft</li>
                                 <li>ZATAZ.com</li>
                                 <li>Le Monde Informatique</li>
                                 <li>Zscaler ThreatLabz</li>
                                 <li>Adversa AI</li>
-                                <li>CERT-XMCO</li>
-                                <li>Google Alertes</li>
+                                <li>CERT-XMCO · Reddit</li>
+                                <li>Google Alertes · Cyber Security News</li>
                             </ul>
                         </div>
                     </div>
@@ -731,13 +790,13 @@
                     <div class="veille-icon">🎀</div>
                     <div class="veille-toggle-text">
                         <p class="veille-tag">Nouvelles sur le marché informatique</p>
-                        <h3>Changements des entreprises informatiques</h3>
+                        <h3>Changements des entreprises et évolutions Réglementaires</h3>
                     </div>
                     <div class="veille-chevron">▼</div>
                 </button>
                 <div class="veille-accordion-body" id="body-marche" role="region">
                     <div class="veille-accordion-inner">
-                        <p class="veille-chapo">Suivi des décisions stratégiques des fabricants et des nouvelles réglementations mises en place.</p>
+                        <p class="veille-chapo">Suivi des décisions stratégiques des géants de la Tech, des mouvements du marché des télécoms ainsi que des nouvelles réglementations.</p>
 
                         <div class="veille-cards">
 
@@ -838,6 +897,14 @@
                             </div>
 
                             <div class="veille-card">
+                                <span class="veille-card-date">11/05/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Union Européenne – Vers une restriction stricte de l'usage des VPN</p>
+                                    <p class="veille-card-desc">De vives inquiétudes s'élèvent au sein de la communauté tech suite aux communications du Parlement européen. Ce dernier pointe du doigt l'utilisation croissante des réseaux privés virtuels (VPN) pour contourner les systèmes de vérification d'âge en ligne, ouvrant la porte à des débats réglementaires complexes pouvant criminaliser ou restreindre fortement leur usage grand public sur le continent.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
                                 <span class="veille-card-date">13/05/2026</span>
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">Patch Tuesday de mai 2026</p>
@@ -850,6 +917,14 @@
                                 <div class="veille-card-content">
                                     <p class="veille-card-title">Cisco supprime ~5 % de ses effectifs</p>
                                     <p class="veille-card-desc">Malgré un CA record de 16 Md$ au Q3 2026, Cisco restructure ses effectifs mondiaux, illustrant la réorganisation des grands acteurs tech autour de l'IA et de l'automatisation.</p>
+                                </div>
+                            </div>
+
+                            <div class="veille-card">
+                                <span class="veille-card-date">06/06/2026</span>
+                                <div class="veille-card-content">
+                                    <p class="veille-card-title">Rachat de SFR par Orange, Bouygues Telecom et Free – 20,35 Md€</p>
+                                    <p class="veille-card-desc">Protocole d'accord signé dans la nuit du 6 au 7 juin 2026 entre le consortium Orange/Bouygues Telecom/Free et Altice France pour le démantèlement de SFR (25,5 M d'abonnés, CA 8 Md€ en 2025). Répartition par acquéreur : <strong>Bouygues Telecom</strong> (42 % – 8,5 Md€) récupère l'intégralité de <em>SFR Business</em> (branche entreprises) + ~6,4 M d'abonnés grand public, se hissant au rang de challenger d'Orange ; <strong>Free/Iliad</strong> (31 %) absorbe la totalité de <em>RED by SFR</em> (6 M d'abonnés low-cost) + ~1 M d'abonnés classiques ; <strong>Orange</strong> (27 %) hérite d'environ 4,9 M d'abonnés restants. Les fréquences mobiles sont réparties entre les trois. La France passerait de 4 à 3 opérateurs nationaux — une première en Europe à cette échelle. Opération soumise à validation de l'Autorité de la concurrence et de l'ARCEP ; risque de hausse tarifaire pour les abonnés.</p>
                                 </div>
                             </div>
 
@@ -892,10 +967,11 @@
                             <ul class="veille-sources-list">
                                 <li>Google Alertes</li>
                                 <li>LinkedIn</li>
-                                <li>X (anciennement Twitter)</li>
+                                <li>X (anciennement Twitter) : @_SaxX_, @EuropeanParliam</li>
                                 <li>Le Monde Informatique</li>
                                 <li>Clubic · IT-Connect</li>
                                 <li>Commission européenne (europa.eu)</li>
+                                <li>TIME France · Les Numériques · mac4ever</li>
                             </ul>
                         </div>
                     </div>
@@ -908,7 +984,7 @@
     <div class="petals"></div>
 
     <footer>
-        <p>© 2025 Domingues Aesa – BTS SIO SISR</p>
+        <p>© 2026 Domingues Aesa – BTS SIO SISR</p>
         <div class="footer-legal">
             <a href="mentions-legales.html">Mentions légales</a>
             <a href="politique-confidentialite.html">Politique de confidentialité</a>
